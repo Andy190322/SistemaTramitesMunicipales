@@ -44,6 +44,7 @@
             pnlContenido.Padding = new Padding(20);
             pnlContenido.Size = new Size(870, 680);
             pnlContenido.TabIndex = 0;
+            pnlContenido.Paint += pnlContenido_Paint;
             // 
             // lblBienvenida
             // 
@@ -54,6 +55,7 @@
             lblBienvenida.Size = new Size(700, 40);
             lblBienvenida.TabIndex = 8;
             lblBienvenida.Text = "Bienvenido al sistema";
+            lblBienvenida.Click += lblBienvenida_Click;
             // 
             // lblUsuarioActual
             // 
@@ -62,6 +64,7 @@
             lblUsuarioActual.Size = new Size(500, 24);
             lblUsuarioActual.TabIndex = 9;
             lblUsuarioActual.Text = "Usuario: (nombre del trabajador)";
+            lblUsuarioActual.Click += lblUsuarioActual_Click;
             // 
             // btnAccesoNuevo
             // 
@@ -98,6 +101,7 @@
             pnlMenu.Name = "pnlMenu";
             pnlMenu.Size = new Size(230, 680);
             pnlMenu.TabIndex = 1;
+            pnlMenu.Paint += pnlMenu_Paint;
             // 
             // lblSistema
             // 
@@ -109,6 +113,7 @@
             lblSistema.TabIndex = 2;
             lblSistema.Text = "LOS OLIVOS\nTrámites municipales";
             lblSistema.TextAlign = ContentAlignment.MiddleCenter;
+            lblSistema.Click += lblSistema_Click;
             // 
             // btnNuevoTramite
             // 
