@@ -1,18 +1,19 @@
-﻿using System.Linq;
-using System.Windows.Forms;
-using System;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaTramitesMunicipales
 {
     public partial class FrmConstanciaNoAdeudo : Form
     {
+        // Constructor
         public FrmConstanciaNoAdeudo()
         {
             InitializeComponent();
             ConfigurarFormulario();
         }
 
+        // Eventos del formulario
         private void txtNombreNoAdeudo_TextChanged(object sender, EventArgs e)
         {
         }
@@ -22,7 +23,143 @@ namespace SistemaTramitesMunicipales
             GuardarSolicitudNoAdeudo();
         }
 
+        private void btnAdjuntarNoAdeudo_Click(object sender, EventArgs e)
+        {
+            AdjuntarArchivoNoAdeudo();
+        }
 
+        private void btnQuitarAdjunto_Click(object sender, EventArgs e)
+        {
+            QuitarArchivoNoAdeudo();
+        }
+
+        private void btnLimpiarNoAdeudo_Click(object sender, EventArgs e)
+        {
+            LimpiarFormularioNoAdeudo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (ConfirmarRegreso())
+            {
+                RegresarMenuSeleccion();
+            }
+        }
+
+        private void FrmConstanciaNoAdeudo_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void grpContribuyente_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void lblCodigoContribuyente_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblDniNoAdeudo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblTelefonoNoAdeudo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCodigoContribuyente_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtDniNoAdeudo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtTelefonoNoAdeudo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblNombreNoAdeudo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblCorreoNoAdeudo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCorreoNoAdeudo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtDomicilioNoAdeudo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblDomicilioNoAdeudo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void grpSolicitud_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void chkNoAdeudo_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblPeriodos_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblUbicacionPredio_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtPeriodos_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtUbicacionPredio_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblMotivo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtMotivo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblPresentaComo_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void rbTitular_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void rbApoderado_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void grpAdjuntos_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvAdjuntosNoAdeudo_CellContentClick(
+            object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        // Métodos void: configuración y archivos
         private void ConfigurarFormulario()
         {
             dgvAdjuntosNoAdeudo.AllowUserToAddRows = false;
@@ -40,10 +177,6 @@ namespace SistemaTramitesMunicipales
             dtpFecha.MaxDate = DateTime.Today;
         }
 
-        private void btnAdjuntarNoAdeudo_Click(object sender, EventArgs e)
-        {
-            AdjuntarArchivoNoAdeudo();
-        }
         private void AdjuntarArchivoNoAdeudo()
         {
             using (OpenFileDialog dialogo = new OpenFileDialog())
@@ -73,10 +206,6 @@ namespace SistemaTramitesMunicipales
             }
         }
 
-        private void btnQuitarAdjunto_Click(object sender, EventArgs e)
-        {
-            QuitarArchivoNoAdeudo();
-        }
         private void QuitarArchivoNoAdeudo()
         {
             if (dgvAdjuntosNoAdeudo.SelectedRows.Count == 0)
@@ -89,8 +218,6 @@ namespace SistemaTramitesMunicipales
                 dgvAdjuntosNoAdeudo.SelectedRows[0]
             );
         }
-
-
 
         private void GuardarSolicitudNoAdeudo()
         {
@@ -146,7 +273,8 @@ namespace SistemaTramitesMunicipales
 
             if (!rbTitular.Checked && !rbApoderado.Checked)
             {
-                MessageBox.Show("Indique si presenta la solicitud como titular o apoderado.");
+                MessageBox.Show(
+                    "Indique si presenta la solicitud como titular o apoderado.");
                 return;
             }
 
@@ -168,24 +296,24 @@ namespace SistemaTramitesMunicipales
 
                 string[] datos =
                 {
-            txtCodigoContribuyente.Text.Trim(),
-            txtDniNoAdeudo.Text.Trim(),
-            txtTelefonoNoAdeudo.Text.Trim(),
-            dtpFecha.Value.ToString("yyyy-MM-dd"),
-            txtNombreNoAdeudo.Text.Trim(),
-            txtCorreoNoAdeudo.Text.Trim(),
-            txtDomicilioNoAdeudo.Text.Trim(),
-            txtPeriodos.Text.Trim(),
-            txtUbicacionPredio.Text.Trim(),
-            txtMotivo.Text.Trim(),
-            rbTitular.Checked ? "Titular" : "Apoderado",
-            string.Join(";",
-                dgvAdjuntosNoAdeudo.Rows
-                    .Cast<DataGridViewRow>()
-                    .Where(f => !f.IsNewRow)
-                    .Select(f => Convert.ToString(
-                        f.Cells["colRutaArchivo"].Value)))
-        };
+                    txtCodigoContribuyente.Text.Trim(),
+                    txtDniNoAdeudo.Text.Trim(),
+                    txtTelefonoNoAdeudo.Text.Trim(),
+                    dtpFecha.Value.ToString("yyyy-MM-dd"),
+                    txtNombreNoAdeudo.Text.Trim(),
+                    txtCorreoNoAdeudo.Text.Trim(),
+                    txtDomicilioNoAdeudo.Text.Trim(),
+                    txtPeriodos.Text.Trim(),
+                    txtUbicacionPredio.Text.Trim(),
+                    txtMotivo.Text.Trim(),
+                    rbTitular.Checked ? "Titular" : "Apoderado",
+                    string.Join(";",
+                        dgvAdjuntosNoAdeudo.Rows
+                            .Cast<DataGridViewRow>()
+                            .Where(f => !f.IsNewRow)
+                            .Select(f => Convert.ToString(
+                                f.Cells["colRutaArchivo"].Value)))
+                };
 
                 string registro = string.Join("|",
                     System.Array.ConvertAll(datos, dato =>
@@ -207,7 +335,6 @@ namespace SistemaTramitesMunicipales
                 MessageBox.Show("Error al guardar la solicitud: " + ex.Message);
             }
         }
-
 
         private void LimpiarFormularioNoAdeudo()
         {
@@ -233,33 +360,6 @@ namespace SistemaTramitesMunicipales
             txtCodigoContribuyente.Focus();
         }
 
-        private void btnLimpiarNoAdeudo_Click(object sender, EventArgs e)
-        {
-            LimpiarFormularioNoAdeudo();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (ConfirmarRegreso())
-            {
-                RegresarMenuSeleccion();
-            }
-        }
-
-
-        private bool ConfirmarRegreso()
-        {
-            DialogResult respuesta = MessageBox.Show(
-                "Si tienes cambios sin guardar o una constancia sin registrar, estos se perderán al regresar al menú de selección. ¿Deseas continuar?",
-                "Confirmar regreso",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            return respuesta == DialogResult.Yes;
-        }
-
-
         private void RegresarMenuSeleccion()
         {
             FrmPrincipal principal = this.MdiParent as FrmPrincipal;
@@ -274,7 +374,17 @@ namespace SistemaTramitesMunicipales
             }
         }
 
+        // Métodos bool
+        private bool ConfirmarRegreso()
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "Si tienes cambios sin guardar o una constancia sin registrar, estos se perderán al regresar al menú de selección. ¿Deseas continuar?",
+                "Confirmar regreso",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
+            return respuesta == DialogResult.Yes;
+        }
     }
 }
-

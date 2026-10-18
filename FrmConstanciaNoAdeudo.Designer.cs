@@ -80,6 +80,7 @@
             grpContribuyente.TabIndex = 0;
             grpContribuyente.TabStop = false;
             grpContribuyente.Text = "Datos del contribuyente";
+            grpContribuyente.Enter += grpContribuyente_Enter;
             // 
             // lblCodigoContribuyente
             // 
@@ -88,6 +89,7 @@
             lblCodigoContribuyente.Size = new Size(200, 20);
             lblCodigoContribuyente.TabIndex = 3;
             lblCodigoContribuyente.Text = "Código";
+            lblCodigoContribuyente.Click += lblCodigoContribuyente_Click;
             // 
             // txtCodigoContribuyente
             // 
@@ -95,6 +97,7 @@
             txtCodigoContribuyente.Name = "txtCodigoContribuyente";
             txtCodigoContribuyente.Size = new Size(200, 24);
             txtCodigoContribuyente.TabIndex = 4;
+            txtCodigoContribuyente.TextChanged += txtCodigoContribuyente_TextChanged;
             // 
             // lblDniNoAdeudo
             // 
@@ -103,6 +106,7 @@
             lblDniNoAdeudo.Size = new Size(200, 20);
             lblDniNoAdeudo.TabIndex = 5;
             lblDniNoAdeudo.Text = "DNI N°";
+            lblDniNoAdeudo.Click += lblDniNoAdeudo_Click;
             // 
             // txtDniNoAdeudo
             // 
@@ -110,6 +114,7 @@
             txtDniNoAdeudo.Name = "txtDniNoAdeudo";
             txtDniNoAdeudo.Size = new Size(200, 24);
             txtDniNoAdeudo.TabIndex = 6;
+            txtDniNoAdeudo.TextChanged += txtDniNoAdeudo_TextChanged;
             // 
             // lblTelefonoNoAdeudo
             // 
@@ -118,6 +123,7 @@
             lblTelefonoNoAdeudo.Size = new Size(200, 20);
             lblTelefonoNoAdeudo.TabIndex = 7;
             lblTelefonoNoAdeudo.Text = "Teléfonos";
+            lblTelefonoNoAdeudo.Click += lblTelefonoNoAdeudo_Click;
             // 
             // txtTelefonoNoAdeudo
             // 
@@ -125,6 +131,7 @@
             txtTelefonoNoAdeudo.Name = "txtTelefonoNoAdeudo";
             txtTelefonoNoAdeudo.Size = new Size(200, 24);
             txtTelefonoNoAdeudo.TabIndex = 8;
+            txtTelefonoNoAdeudo.TextChanged += txtTelefonoNoAdeudo_TextChanged;
             // 
             // lblFecha
             // 
@@ -133,6 +140,7 @@
             lblFecha.Size = new Size(200, 20);
             lblFecha.TabIndex = 9;
             lblFecha.Text = "Fecha";
+            lblFecha.Click += lblFecha_Click;
             // 
             // dtpFecha
             // 
@@ -141,6 +149,7 @@
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(200, 24);
             dtpFecha.TabIndex = 10;
+            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
             // 
             // lblNombreNoAdeudo
             // 
@@ -149,6 +158,7 @@
             lblNombreNoAdeudo.Size = new Size(640, 20);
             lblNombreNoAdeudo.TabIndex = 11;
             lblNombreNoAdeudo.Text = "Apellidos y nombres del contribuyente";
+            lblNombreNoAdeudo.Click += lblNombreNoAdeudo_Click;
             // 
             // txtNombreNoAdeudo
             // 
@@ -165,6 +175,7 @@
             lblCorreoNoAdeudo.Size = new Size(200, 20);
             lblCorreoNoAdeudo.TabIndex = 13;
             lblCorreoNoAdeudo.Text = "Correo electrónico";
+            lblCorreoNoAdeudo.Click += lblCorreoNoAdeudo_Click;
             // 
             // txtCorreoNoAdeudo
             // 
@@ -172,6 +183,7 @@
             txtCorreoNoAdeudo.Name = "txtCorreoNoAdeudo";
             txtCorreoNoAdeudo.Size = new Size(200, 24);
             txtCorreoNoAdeudo.TabIndex = 14;
+            txtCorreoNoAdeudo.TextChanged += txtCorreoNoAdeudo_TextChanged;
             // 
             // lblDomicilioNoAdeudo
             // 
@@ -180,6 +192,7 @@
             lblDomicilioNoAdeudo.Size = new Size(860, 20);
             lblDomicilioNoAdeudo.TabIndex = 15;
             lblDomicilioNoAdeudo.Text = "Domicilio";
+            lblDomicilioNoAdeudo.Click += lblDomicilioNoAdeudo_Click;
             // 
             // txtDomicilioNoAdeudo
             // 
@@ -187,6 +200,7 @@
             txtDomicilioNoAdeudo.Name = "txtDomicilioNoAdeudo";
             txtDomicilioNoAdeudo.Size = new Size(860, 24);
             txtDomicilioNoAdeudo.TabIndex = 16;
+            txtDomicilioNoAdeudo.TextChanged += txtDomicilioNoAdeudo_TextChanged;
             // 
             // grpSolicitud
             // 
@@ -206,6 +220,7 @@
             grpSolicitud.TabIndex = 1;
             grpSolicitud.TabStop = false;
             grpSolicitud.Text = "Datos de la solicitud";
+            grpSolicitud.Enter += grpSolicitud_Enter;
             // 
             // chkNoAdeudo
             // 
@@ -217,6 +232,7 @@
             chkNoAdeudo.TabIndex = 17;
             chkNoAdeudo.Text = "Constancia de No Adeudo de Tributos Municipales";
             chkNoAdeudo.UseVisualStyleBackColor = true;
+            chkNoAdeudo.CheckedChanged += chkNoAdeudo_CheckedChanged;
             // 
             // lblPeriodos
             // 
@@ -225,6 +241,7 @@
             lblPeriodos.Size = new Size(380, 20);
             lblPeriodos.TabIndex = 18;
             lblPeriodos.Text = "Períodos (ej.: 2024 - 2026)";
+            lblPeriodos.Click += lblPeriodos_Click;
             // 
             // txtPeriodos
             // 
@@ -232,6 +249,7 @@
             txtPeriodos.Name = "txtPeriodos";
             txtPeriodos.Size = new Size(380, 24);
             txtPeriodos.TabIndex = 19;
+            txtPeriodos.TextChanged += txtPeriodos_TextChanged;
             // 
             // lblUbicacionPredio
             // 
@@ -240,6 +258,7 @@
             lblUbicacionPredio.Size = new Size(460, 20);
             lblUbicacionPredio.TabIndex = 20;
             lblUbicacionPredio.Text = "Predio ubicado en";
+            lblUbicacionPredio.Click += lblUbicacionPredio_Click;
             // 
             // txtUbicacionPredio
             // 
@@ -247,6 +266,7 @@
             txtUbicacionPredio.Name = "txtUbicacionPredio";
             txtUbicacionPredio.Size = new Size(460, 24);
             txtUbicacionPredio.TabIndex = 21;
+            txtUbicacionPredio.TextChanged += txtUbicacionPredio_TextChanged;
             // 
             // lblMotivo
             // 
@@ -255,6 +275,7 @@
             lblMotivo.Size = new Size(400, 20);
             lblMotivo.TabIndex = 22;
             lblMotivo.Text = "Sustento y/o motivo (obligatorio)";
+            lblMotivo.Click += lblMotivo_Click;
             // 
             // txtMotivo
             // 
@@ -264,6 +285,7 @@
             txtMotivo.ScrollBars = ScrollBars.Vertical;
             txtMotivo.Size = new Size(860, 60);
             txtMotivo.TabIndex = 23;
+            txtMotivo.TextChanged += txtMotivo_TextChanged;
             // 
             // lblPresentaComo
             // 
@@ -272,6 +294,7 @@
             lblPresentaComo.Size = new Size(200, 20);
             lblPresentaComo.TabIndex = 24;
             lblPresentaComo.Text = "Presenta la solicitud como:";
+            lblPresentaComo.Click += lblPresentaComo_Click;
             // 
             // rbTitular
             // 
@@ -283,6 +306,7 @@
             rbTitular.TabStop = true;
             rbTitular.Text = "Titular";
             rbTitular.UseVisualStyleBackColor = true;
+            rbTitular.CheckedChanged += rbTitular_CheckedChanged;
             // 
             // rbApoderado
             // 
@@ -292,6 +316,7 @@
             rbApoderado.TabIndex = 26;
             rbApoderado.Text = "Apoderado";
             rbApoderado.UseVisualStyleBackColor = true;
+            rbApoderado.CheckedChanged += rbApoderado_CheckedChanged;
             // 
             // grpAdjuntos
             // 
@@ -304,6 +329,7 @@
             grpAdjuntos.TabIndex = 2;
             grpAdjuntos.TabStop = false;
             grpAdjuntos.Text = "Documentos adjuntos";
+            grpAdjuntos.Enter += grpAdjuntos_Enter;
             // 
             // btnAdjuntarNoAdeudo
             // 
@@ -345,6 +371,7 @@
             dgvAdjuntosNoAdeudo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAdjuntosNoAdeudo.Size = new Size(700, 105);
             dgvAdjuntosNoAdeudo.TabIndex = 29;
+            dgvAdjuntosNoAdeudo.CellContentClick += dgvAdjuntosNoAdeudo_CellContentClick;
             // 
             // colNombreArchivo
             // 
@@ -412,6 +439,7 @@
             Name = "FrmConstanciaNoAdeudo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Solicitud de Constancia de No Adeudo";
+            Load += FrmConstanciaNoAdeudo_Load;
             grpContribuyente.ResumeLayout(false);
             grpContribuyente.PerformLayout();
             grpSolicitud.ResumeLayout(false);
