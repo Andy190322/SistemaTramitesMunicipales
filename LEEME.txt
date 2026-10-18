@@ -1,0 +1,28 @@
+DISEÑO - SISTEMA DE TRÁMITES MUNICIPALES (MUNICIPALIDAD DE LOS OLIVOS)
+=====================================================================
+
+Este proyecto contiene SOLO EL DISEÑO (interfaz) en C# Windows Forms, .NET 8.
+No tiene lógica, base de datos ni validaciones: eso lo programa otra persona.
+
+CÓMO ABRIRLO
+  1. Descomprimir.
+  2. Doble clic en SistemaTramitesMunicipales.sln (Visual Studio 2022, carga de trabajo
+     "Desarrollo de escritorio de .NET").
+  3. En el Explorador de soluciones, doble clic en cualquier formulario (FrmLogin.cs, etc.)
+     para verlo y editarlo en el diseñador visual.
+  4. F5 para ejecutar (abre FrmLogin; ver Program.cs para abrir otro formulario).
+
+FORMULARIOS
+  FrmLogin                  Inicio de sesión
+  FrmMenuPrincipal          Menú lateral + pantalla de bienvenida
+  FrmNuevoTramite           Elegir entre los 2 trámites
+  FrmInscripcionPropiedad   Trámite 1: H.R., P.U., construcción, copropietarios, documentos
+  FrmConstanciaNoAdeudo     Trámite 2: Formato de Solicitud
+  FrmConsultarTramites      Búsqueda y seguimiento de expedientes
+
+PARA QUIEN PROGRAME
+  - CONTROLES.txt lista todos los controles con su nombre exacto.
+  - Cada formulario tiene su archivo .cs (aquí va el código) y su .Designer.cs
+    (generado por el diseñador; no editar a mano).
+  - Los controles ya están nombrados; los botones no tienen eventos: se crean con doble clic.
+  - Los ComboBox ya traen las opciones de los formularios H.R. y P.U.

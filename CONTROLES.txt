@@ -1,0 +1,137 @@
+LISTA DE CONTROLES POR FORMULARIO (nombre = propiedad Name en el diseñador)
+======================================================================
+
+FrmLogin  -  Inicio de sesión
+----------------------------------------------------------------------
+  Panel            pnlAcceso                    (dentro de: FrmLogin)
+  Panel            pnlLogo                      (dentro de: FrmLogin)
+  PictureBox       picLogo                      (dentro de: pnlLogo)
+  TextBox          txtUsuario                   (dentro de: pnlAcceso)
+  TextBox          txtContrasena                (dentro de: pnlAcceso)
+  Button           btnIngresar                  (dentro de: pnlAcceso)
+
+FrmMenuPrincipal  -  Sistema Municipal - Menú principal
+----------------------------------------------------------------------
+  Panel            pnlContenido                 (dentro de: FrmMenuPrincipal)
+  Panel            pnlMenu                      (dentro de: FrmMenuPrincipal)
+  Button           btnInicio                    (dentro de: pnlMenu)
+  Button           btnNuevoTramite              (dentro de: pnlMenu)
+  Button           btnConsultar                 (dentro de: pnlMenu)
+  Button           btnContribuyentes            (dentro de: pnlMenu)
+  Button           btnCerrarSesion              (dentro de: pnlMenu)
+  Button           btnAccesoNuevo               (dentro de: pnlContenido)
+  Button           btnAccesoConsulta            (dentro de: pnlContenido)
+
+FrmNuevoTramite  -  Seleccionar trámite
+----------------------------------------------------------------------
+  GroupBox         grpInscripcion               (dentro de: FrmNuevoTramite)
+  GroupBox         grpNoAdeudo                  (dentro de: FrmNuevoTramite)
+  Button           btnInscripcion               (dentro de: grpInscripcion)
+  Button           btnNoAdeudo                  (dentro de: grpNoAdeudo)
+
+FrmInscripcionPropiedad  -  Inscripción de Propiedad
+----------------------------------------------------------------------
+  TabControl       tabInscripcion               (dentro de: FrmInscripcionPropiedad)
+  TabPage          tabHR                        (dentro de: tabInscripcion)
+  TabPage          tabPU                        (dentro de: tabInscripcion)
+  TabPage          tabConstruccion              (dentro de: tabInscripcion)
+  TabPage          tabCopropietarios            (dentro de: tabInscripcion)
+  TabPage          tabDocumentos                (dentro de: tabInscripcion)
+  TextBox          txtDniHR                     (dentro de: tabHR)
+  TextBox          txtNombresHR                 (dentro de: tabHR)
+  TextBox          txtTelefonoHR                (dentro de: tabHR)
+  TextBox          txtCorreoHR                  (dentro de: tabHR)
+  TextBox          txtDomicilioHR               (dentro de: tabHR)
+  ComboBox         cboTipoDeclaracion           (dentro de: tabHR)
+  ComboBox         cboMotivoDeclaracion         (dentro de: tabHR)
+  TextBox          txtImpuestoAnual             (dentro de: tabHR)
+  TextBox          txtImpuestoTrimestral        (dentro de: tabHR)
+  DataGridView     dgvPrediosHR                 (dentro de: tabHR)
+      columna colAnexo               "Anexo N°"
+      columna colCodigo              "Código del predio"
+      columna colCondominio          "% Condominio"
+      columna colAutovaluo           "Autovalúo"
+  TextBox          txtCodigoPredio              (dentro de: tabPU)
+  TextBox          txtDireccionPredio           (dentro de: tabPU)
+  ComboBox         cboDistrito                  (dentro de: tabPU)
+  ComboBox         cboEstadoPredio              (dentro de: tabPU)
+  ComboBox         cboTipoPredio                (dentro de: tabPU)
+  ComboBox         cboUsoPredio                 (dentro de: tabPU)
+  ComboBox         cboCondicion                 (dentro de: tabPU)
+  NumericUpDown    numAreaTerreno               (dentro de: tabPU)
+  NumericUpDown    numAreaConstruida            (dentro de: tabPU)
+  NumericUpDown    numNumeroPisos               (dentro de: tabPU)
+  DataGridView     dgvConstrucciones            (dentro de: tabConstruccion)
+      columna colPiso                "Piso N°"
+      columna colAntiguedad          "Antigüedad (años)"
+      columna colCategorias          "Categorías"
+      columna colArea                "Área construida (m²)"
+      columna colValor               "Valor de la construcción (S/)"
+  NumericUpDown    numArancel                   (dentro de: tabConstruccion)
+  TextBox          txtAutovaluo                 (dentro de: tabConstruccion)
+  Button           btnCalcular                  (dentro de: tabConstruccion)
+  Button           btnEliminarConstruccion      (dentro de: tabConstruccion)
+  TextBox          txtDniCopropietario          (dentro de: tabCopropietarios)
+  TextBox          txtNombreCopropietario       (dentro de: tabCopropietarios)
+  NumericUpDown    numPorcentaje                (dentro de: tabCopropietarios)
+  Button           btnAgregarCopropietario      (dentro de: tabCopropietarios)
+  Button           btnQuitarCopropietario       (dentro de: tabCopropietarios)
+  DataGridView     dgvCopropietarios            (dentro de: tabCopropietarios)
+      columna colDniCop              "DNI / RUC"
+      columna colNombreCop           "Apellidos y nombres"
+      columna colPorcentajeCop       "Porcentaje (%)"
+  CheckedListBox   clbRequisitos                (dentro de: tabDocumentos)
+  DateTimePicker   dtpFechaCompra               (dentro de: tabDocumentos)
+  Button           btnAdjuntarDocumento         (dentro de: tabDocumentos)
+  Button           btnQuitarDocumento           (dentro de: tabDocumentos)
+  DataGridView     dgvDocumentos                (dentro de: tabDocumentos)
+      columna colNombreArchivo       "Archivo"
+      columna colRutaArchivo         "Ruta"
+  Button           btnAnterior                  (dentro de: FrmInscripcionPropiedad)
+  Button           btnSiguiente                 (dentro de: FrmInscripcionPropiedad)
+  Button           btnGuardarInscripcion        (dentro de: FrmInscripcionPropiedad)
+  OpenFileDialog   ofdDocumento                 (componente)
+
+FrmConstanciaNoAdeudo  -  Solicitud de Constancia de No Adeudo
+----------------------------------------------------------------------
+  GroupBox         grpContribuyente             (dentro de: FrmConstanciaNoAdeudo)
+  GroupBox         grpSolicitud                 (dentro de: FrmConstanciaNoAdeudo)
+  GroupBox         grpAdjuntos                  (dentro de: FrmConstanciaNoAdeudo)
+  TextBox          txtCodigoContribuyente       (dentro de: grpContribuyente)
+  TextBox          txtDniNoAdeudo               (dentro de: grpContribuyente)
+  TextBox          txtTelefonoNoAdeudo          (dentro de: grpContribuyente)
+  DateTimePicker   dtpFecha                     (dentro de: grpContribuyente)
+  TextBox          txtNombreNoAdeudo            (dentro de: grpContribuyente)
+  TextBox          txtCorreoNoAdeudo            (dentro de: grpContribuyente)
+  TextBox          txtDomicilioNoAdeudo         (dentro de: grpContribuyente)
+  CheckBox         chkNoAdeudo                  (dentro de: grpSolicitud)
+  TextBox          txtPeriodos                  (dentro de: grpSolicitud)
+  TextBox          txtUbicacionPredio           (dentro de: grpSolicitud)
+  TextBox          txtMotivo                    (dentro de: grpSolicitud)
+  RadioButton      rbTitular                    (dentro de: grpSolicitud)
+  RadioButton      rbApoderado                  (dentro de: grpSolicitud)
+  Button           btnAdjuntarNoAdeudo          (dentro de: grpAdjuntos)
+  Button           btnQuitarAdjunto             (dentro de: grpAdjuntos)
+  DataGridView     dgvAdjuntosNoAdeudo          (dentro de: grpAdjuntos)
+      columna colNombreArchivo       "Archivo"
+      columna colRutaArchivo         "Ruta"
+  Button           btnLimpiarNoAdeudo           (dentro de: FrmConstanciaNoAdeudo)
+  Button           btnGuardarNoAdeudo           (dentro de: FrmConstanciaNoAdeudo)
+
+FrmConsultarTramites  -  Consultar trámites
+----------------------------------------------------------------------
+  TextBox          txtBuscarExpediente          (dentro de: FrmConsultarTramites)
+  TextBox          txtBuscarDni                 (dentro de: FrmConsultarTramites)
+  ComboBox         cboBuscarTipo                (dentro de: FrmConsultarTramites)
+  ComboBox         cboBuscarEstado              (dentro de: FrmConsultarTramites)
+  Button           btnBuscar                    (dentro de: FrmConsultarTramites)
+  DataGridView     dgvResultados                (dentro de: FrmConsultarTramites)
+      columna colExpediente          "Expediente"
+      columna colTramite             "Trámite"
+      columna colDniRuc              "DNI / RUC"
+      columna colContribuyente       "Contribuyente"
+      columna colFecha               "Fecha"
+      columna colEstado              "Estado"
+  Button           btnVerDetalle                (dentro de: FrmConsultarTramites)
+  ComboBox         cboNuevoEstado               (dentro de: FrmConsultarTramites)
+  Button           btnActualizarEstado          (dentro de: FrmConsultarTramites)
