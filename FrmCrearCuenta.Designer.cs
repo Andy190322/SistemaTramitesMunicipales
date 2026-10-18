@@ -212,6 +212,8 @@
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(224, 23);
             txtContrasena.TabIndex = 19;
+            txtContrasena.UseSystemPasswordChar = true;
+            txtContrasena.TextChanged += txtContrasena_TextChanged;
             // 
             // lblConfirmarContrasena
             // 
@@ -227,6 +229,7 @@
             txtConfirmarContrasena.Name = "txtConfirmarContrasena";
             txtConfirmarContrasena.Size = new Size(224, 23);
             txtConfirmarContrasena.TabIndex = 21;
+            txtConfirmarContrasena.UseSystemPasswordChar = true;
             // 
             // lblCorreoElectronico
             // 

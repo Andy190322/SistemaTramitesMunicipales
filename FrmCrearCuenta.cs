@@ -60,7 +60,7 @@ namespace SistemaTramitesMunicipales
 
             MessageBox.Show("Datos correctos. Próximamente se registrará en la base de datos.");
 
-            
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace SistemaTramitesMunicipales
             }
         }
 
-        
+
 
         private void ValidarSoloNumeros(object sender, KeyPressEventArgs e)
         {
@@ -146,6 +146,9 @@ namespace SistemaTramitesMunicipales
             txtTelefono.KeyPress += ValidarSoloNumeros;
         }
 
+        private void txtContrasena_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
