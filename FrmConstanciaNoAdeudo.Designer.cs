@@ -51,6 +51,7 @@
             colRutaArchivo = new DataGridViewTextBoxColumn();
             btnLimpiarNoAdeudo = new Button();
             btnGuardarNoAdeudo = new Button();
+            btnRegresar = new Button();
             grpContribuyente.SuspendLayout();
             grpSolicitud.SuspendLayout();
             grpAdjuntos.SuspendLayout();
@@ -382,12 +383,26 @@
             btnGuardarNoAdeudo.UseVisualStyleBackColor = false;
             btnGuardarNoAdeudo.Click += btnGuardarNoAdeudo_Click;
             // 
+            // btnRegresar
+            // 
+            btnRegresar.BackColor = Color.FromArgb(24, 61, 114);
+            btnRegresar.FlatStyle = FlatStyle.Flat;
+            btnRegresar.ForeColor = Color.White;
+            btnRegresar.Location = new Point(15, 640);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(130, 36);
+            btnRegresar.TabIndex = 32;
+            btnRegresar.Text = "REGRESAR";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += button1_Click;
+            // 
             // FrmConstanciaNoAdeudo
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoScroll = true;
             BackColor = Color.White;
             ClientSize = new Size(950, 700);
+            Controls.Add(btnRegresar);
             Controls.Add(grpContribuyente);
             Controls.Add(grpSolicitud);
             Controls.Add(grpAdjuntos);
@@ -442,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRutaArchivo;
         private System.Windows.Forms.Button btnLimpiarNoAdeudo;
         private System.Windows.Forms.Button btnGuardarNoAdeudo;
+        private Button btnRegresar;
     }
 }
