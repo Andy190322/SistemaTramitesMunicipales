@@ -38,6 +38,7 @@
             lblTitulo.Size = new Size(780, 40);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Seleccione el trámite que desea registrar";
+            lblTitulo.Click += lblTitulo_Click;
             // 
             // grpInscripcion
             // 
@@ -49,6 +50,7 @@
             grpInscripcion.TabIndex = 1;
             grpInscripcion.TabStop = false;
             grpInscripcion.Text = "Inscripción de Propiedad";
+            grpInscripcion.Enter += grpInscripcion_Enter;
             // 
             // lblDescInscripcion
             // 
@@ -57,6 +59,7 @@
             lblDescInscripcion.Size = new Size(340, 80);
             lblDescInscripcion.TabIndex = 3;
             lblDescInscripcion.Text = "Registro de la Hoja de Resumen (H.R.), el Predio Urbano (P.U.), la construcción, los copropietarios y los documentos.";
+            lblDescInscripcion.Click += lblDescInscripcion_Click;
             // 
             // btnInscripcion
             // 
@@ -81,6 +84,7 @@
             grpNoAdeudo.TabIndex = 2;
             grpNoAdeudo.TabStop = false;
             grpNoAdeudo.Text = "Constancia de No Adeudo";
+            grpNoAdeudo.Enter += grpNoAdeudo_Enter;
             // 
             // lblDescNoAdeudo
             // 
@@ -89,6 +93,7 @@
             lblDescNoAdeudo.Size = new Size(340, 80);
             lblDescNoAdeudo.TabIndex = 5;
             lblDescNoAdeudo.Text = "Registro de la solicitud de Constancia de No Adeudo de Tributos Municipales según el Formato de Solicitud.";
+            lblDescNoAdeudo.Click += lblDescNoAdeudo_Click;
             // 
             // btnNoAdeudo
             // 
