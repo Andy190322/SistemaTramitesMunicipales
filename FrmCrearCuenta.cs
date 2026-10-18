@@ -1,48 +1,119 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 using System.Windows.Forms;
 
 namespace SistemaTramitesMunicipales
 {
     public partial class FrmCrearCuenta : Form
     {
+        // ==================== CONSTRUCTOR ====================
         public FrmCrearCuenta()
         {
             InitializeComponent();
             ConfigurarCamposNumericos();
         }
 
+        // ==================== BOTONES Y EVENTOS ====================
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            ValidarDatosRegistro();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            RegistrarCuenta();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void FrmCrearCuenta_Load(object sender, EventArgs e)
+        {
+        }
+
         private void lblMunicipalidad_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblTitulo_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
+        }
 
+        private void lblGerencia_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblApellido_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblDni_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblContrasena_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblConfirmarContrasena_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblCorreoElectronico_Click(object sender, EventArgs e)
+        {
         }
 
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-
         }
-        private void btnRegistrarse_Click(object sender, EventArgs e)
+
+        private void txtContrasena_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtConfirmarContrasena_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void pnlLogo_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        // ==================== MÉTODOS VOID ====================
+        private void ValidarDatosRegistro()
         {
             if (txtNombreUsuario.Text == "" ||
                 txtContrasena.Text == "" ||
@@ -58,14 +129,13 @@ namespace SistemaTramitesMunicipales
                 return;
             }
 
-            MessageBox.Show("Datos correctos. Próximamente se registrará en la base de datos.");
-
-
+            MessageBox.Show(
+                "Datos correctos. Próximamente se registrará en la base de datos."
+            );
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void RegistrarCuenta()
         {
-
             if (txtNombreUsuario.Text.Trim() == "" ||
                 txtContrasena.Text == "" ||
                 txtConfirmarContrasena.Text == "" ||
@@ -96,6 +166,7 @@ namespace SistemaTramitesMunicipales
                 MessageBox.Show("Las contraseñas no coinciden.");
                 return;
             }
+
             bool registrado = GestionUsuarios.RegistrarUsuario(
                 txtNombreUsuario.Text,
                 txtContrasena.Text,
@@ -104,7 +175,7 @@ namespace SistemaTramitesMunicipales
                 txtDni.Text,
                 txtCorreoElectronico.Text,
                 txtTelefono.Text
-);
+            );
 
             if (registrado)
             {
@@ -122,21 +193,13 @@ namespace SistemaTramitesMunicipales
             }
             else
             {
-                MessageBox.Show("No se pudo registrar. Verifique si los datos ya existen.");
-                return;
+                MessageBox.Show(
+                    "No se pudo registrar. Verifique si los datos ya existen."
+                );
             }
         }
 
-
-
-        private void ValidarSoloNumeros(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
+        // ==================== OTROS MÉTODOS ====================
         private void ConfigurarCamposNumericos()
         {
             txtDni.MaxLength = 8;
@@ -146,9 +209,12 @@ namespace SistemaTramitesMunicipales
             txtTelefono.KeyPress += ValidarSoloNumeros;
         }
 
-        private void txtContrasena_TextChanged(object sender, EventArgs e)
+        private void ValidarSoloNumeros(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -67,6 +67,7 @@
             pnlLogo.Name = "pnlLogo";
             pnlLogo.Size = new Size(354, 551);
             pnlLogo.TabIndex = 2;
+            pnlLogo.Paint += pnlLogo_Paint;
             // 
             // picLogo
             // 
@@ -99,6 +100,7 @@
             lblGerencia.TabIndex = 4;
             lblGerencia.Text = "Gerencia de Administración Tributaria y Rentas";
             lblGerencia.TextAlign = ContentAlignment.MiddleCenter;
+            lblGerencia.Click += lblGerencia_Click;
             // 
             // lblTitulo
             // 
@@ -144,6 +146,7 @@
             lblNombre.Size = new Size(224, 20);
             lblNombre.TabIndex = 10;
             lblNombre.Text = "Nombres";
+            lblNombre.Click += lblNombre_Click;
             // 
             // txtNombre
             // 
@@ -151,6 +154,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(224, 23);
             txtNombre.TabIndex = 11;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // lblApellido
             // 
@@ -159,6 +163,7 @@
             lblApellido.Size = new Size(224, 20);
             lblApellido.TabIndex = 12;
             lblApellido.Text = "Apellidos";
+            lblApellido.Click += lblApellido_Click;
             // 
             // txtApellido
             // 
@@ -166,6 +171,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(224, 23);
             txtApellido.TabIndex = 13;
+            txtApellido.TextChanged += txtApellido_TextChanged;
             // 
             // lblDni
             // 
@@ -174,6 +180,7 @@
             lblDni.Size = new Size(224, 20);
             lblDni.TabIndex = 14;
             lblDni.Text = "DNI";
+            lblDni.Click += lblDni_Click;
             // 
             // txtDni
             // 
@@ -181,6 +188,7 @@
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(224, 23);
             txtDni.TabIndex = 15;
+            txtDni.TextChanged += txtDni_TextChanged;
             // 
             // lblTelefono
             // 
@@ -197,6 +205,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(224, 23);
             txtTelefono.TabIndex = 17;
+            txtTelefono.TextChanged += txtTelefono_TextChanged;
             // 
             // lblContrasena
             // 
@@ -205,6 +214,7 @@
             lblContrasena.Size = new Size(224, 20);
             lblContrasena.TabIndex = 18;
             lblContrasena.Text = "Contraseña";
+            lblContrasena.Click += lblContrasena_Click;
             // 
             // txtContrasena
             // 
@@ -222,6 +232,7 @@
             lblConfirmarContrasena.Size = new Size(224, 20);
             lblConfirmarContrasena.TabIndex = 20;
             lblConfirmarContrasena.Text = "Confirmar Contraseña";
+            lblConfirmarContrasena.Click += lblConfirmarContrasena_Click;
             // 
             // txtConfirmarContrasena
             // 
@@ -230,6 +241,7 @@
             txtConfirmarContrasena.Size = new Size(224, 23);
             txtConfirmarContrasena.TabIndex = 21;
             txtConfirmarContrasena.UseSystemPasswordChar = true;
+            txtConfirmarContrasena.TextChanged += txtConfirmarContrasena_TextChanged;
             // 
             // lblCorreoElectronico
             // 
@@ -238,6 +250,7 @@
             lblCorreoElectronico.Size = new Size(224, 20);
             lblCorreoElectronico.TabIndex = 22;
             lblCorreoElectronico.Text = "Correo Electronico";
+            lblCorreoElectronico.Click += lblCorreoElectronico_Click;
             // 
             // txtCorreoElectronico
             // 
@@ -245,6 +258,7 @@
             txtCorreoElectronico.Name = "txtCorreoElectronico";
             txtCorreoElectronico.Size = new Size(224, 23);
             txtCorreoElectronico.TabIndex = 23;
+            txtCorreoElectronico.TextChanged += txtCorreoElectronico_TextChanged;
             // 
             // btnRegistrar
             // 
@@ -270,6 +284,7 @@
             btnCancelar.TabIndex = 25;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmCrearCuenta
             // 
@@ -299,6 +314,7 @@
             Controls.Add(pnlLogo);
             Name = "FrmCrearCuenta";
             Text = "FrmCrearCuenta";
+            Load += FrmCrearCuenta_Load;
             pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             ResumeLayout(false);
