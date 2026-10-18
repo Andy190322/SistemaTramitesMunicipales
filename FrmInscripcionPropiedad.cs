@@ -981,5 +981,47 @@
             lblTotalPorcentaje.Text = "Total: " + total.ToString("0.##") + " %";
         }
 
+        private void txtNombresHR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            if (ConfirmarRegreso())
+            {
+                RegresarMenuSeleccion();
+            }
+        }
+
+
+        private bool ConfirmarRegreso()
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "Si tienes cambios sin guardar o una inscripción sin registrar, estos se perderán al regresar al menú de selección. ¿Deseas continuar?",
+                "Confirmar regreso",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            return respuesta == DialogResult.Yes;
+        }
+
+
+        private void RegresarMenuSeleccion()
+        {
+            FrmPrincipal principal = this.MdiParent as FrmPrincipal;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(new FrmNuevoTramite());
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el formulario principal.");
+            }
+        }
+
+
     }
 }

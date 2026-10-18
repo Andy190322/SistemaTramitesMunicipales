@@ -110,6 +110,7 @@
             btnSiguiente = new Button();
             btnGuardarInscripcion = new Button();
             ofdDocumento = new OpenFileDialog();
+            btnRegresar = new Button();
             tabInscripcion.SuspendLayout();
             tabHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPrediosHR).BeginInit();
@@ -200,6 +201,7 @@
             txtNombresHR.Name = "txtNombresHR";
             txtNombresHR.Size = new Size(400, 24);
             txtNombresHR.TabIndex = 9;
+            txtNombresHR.TextChanged += txtNombresHR_TextChanged;
             // 
             // lblTelefonoHR
             // 
@@ -589,10 +591,10 @@
             tabConstruccion.Controls.Add(btnEliminarConstruccion);
             tabConstruccion.Controls.Add(lblEscala);
             tabConstruccion.Controls.Add(lblNotaValores);
-            tabConstruccion.Location = new Point(4, 26);
+            tabConstruccion.Location = new Point(4, 24);
             tabConstruccion.Name = "tabConstruccion";
             tabConstruccion.Padding = new Padding(3);
-            tabConstruccion.Size = new Size(1102, 570);
+            tabConstruccion.Size = new Size(1102, 572);
             tabConstruccion.TabIndex = 3;
             tabConstruccion.Text = "3. Construcción y autovalúo";
             tabConstruccion.UseVisualStyleBackColor = true;
@@ -728,10 +730,10 @@
             tabCopropietarios.Controls.Add(btnQuitarCopropietario);
             tabCopropietarios.Controls.Add(dgvCopropietarios);
             tabCopropietarios.Controls.Add(lblTotalPorcentaje);
-            tabCopropietarios.Location = new Point(4, 26);
+            tabCopropietarios.Location = new Point(4, 24);
             tabCopropietarios.Name = "tabCopropietarios";
             tabCopropietarios.Padding = new Padding(3);
-            tabCopropietarios.Size = new Size(1102, 570);
+            tabCopropietarios.Size = new Size(1102, 572);
             tabCopropietarios.TabIndex = 4;
             tabCopropietarios.Text = "4. Copropietarios";
             tabCopropietarios.UseVisualStyleBackColor = true;
@@ -997,11 +999,25 @@
             ofdDocumento.Filter = "PDF e imágenes|*.pdf;*.jpg;*.jpeg;*.png|Todos los archivos|*.*";
             ofdDocumento.Title = "Seleccionar documento";
             // 
+            // btnRegresar
+            // 
+            btnRegresar.BackColor = Color.FromArgb(24, 61, 114);
+            btnRegresar.FlatStyle = FlatStyle.Flat;
+            btnRegresar.ForeColor = Color.White;
+            btnRegresar.Location = new Point(725, 625);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(160, 36);
+            btnRegresar.TabIndex = 77;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FrmInscripcionPropiedad
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
             ClientSize = new Size(1150, 720);
+            Controls.Add(btnRegresar);
             Controls.Add(tabInscripcion);
             Controls.Add(btnAnterior);
             Controls.Add(btnSiguiente);
@@ -1127,5 +1143,6 @@
         private System.Windows.Forms.Button btnGuardarInscripcion;
         private System.Windows.Forms.OpenFileDialog ofdDocumento;
         private Button btnRegistrarPredio;
+        private Button btnRegresar;
     }
 }
