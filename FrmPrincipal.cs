@@ -1,43 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 using System.Windows.Forms;
 
 namespace SistemaTramitesMunicipales
 {
     public partial class FrmPrincipal : Form
     {
+        // ==================== CONSTRUCTOR ====================
+
         public FrmPrincipal()
         {
             InitializeComponent();
         }
 
 
-        void Salir()
-        {
-            DialogResult respuesta;
-            respuesta = MessageBox.Show("Estas seguro de salir",
-                                        "Mensaje de confirmacion",
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (respuesta == DialogResult.Yes)
-            {
-                Application.Exit();
+        // ==================== BOTONES Y EVENTOS ====================
 
-            }
-
-        }
-        private void CerrarFormulariosAbiertos()
-        {
-            foreach (Form formulario in this.MdiChildren)
-            {
-                formulario.Close();
-            }
-        }
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Salir();
@@ -45,7 +23,6 @@ namespace SistemaTramitesMunicipales
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,7 +35,6 @@ namespace SistemaTramitesMunicipales
 
         private void crearCuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void crearCuentaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,8 +43,42 @@ namespace SistemaTramitesMunicipales
 
             FrmCrearCuenta frmCrearCuenta = new FrmCrearCuenta();
             AbrirFormulario(frmCrearCuenta);
-
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+        }
+
+
+        // ==================== MÉTODOS VOID ====================
+
+        private void Salir()
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "¿Estás seguro de salir?",
+                "Mensaje de confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (respuesta == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void CerrarFormulariosAbiertos()
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                formulario.Close();
+            }
+        }
+
         public void AbrirFormulario(Form formulario)
         {
             foreach (Form hijo in this.MdiChildren)
@@ -83,27 +93,5 @@ namespace SistemaTramitesMunicipales
             formulario.Dock = DockStyle.Fill;
             formulario.Show();
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AbrirNuevoTramite()
-        {
-            FrmNuevoTramite formulario = new FrmNuevoTramite();
-            FrmPrincipal principal = this.MdiParent as FrmPrincipal;
-
-            if (principal != null)
-            {
-                principal.AbrirFormulario(formulario);
-            }
-        }
-
     }
 }
