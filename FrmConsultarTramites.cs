@@ -10,6 +10,7 @@ namespace SistemaTramitesMunicipales
 {
     public partial class FrmConsultarTramites : Form
     {
+        // ==================== ATRIBUTOS Y RUTAS ====================
         private readonly string carpetaDatos =
             Path.Combine(Application.StartupPath, "Datos");
 
@@ -22,25 +23,17 @@ namespace SistemaTramitesMunicipales
         private List<Dictionary<string, string>> tramites =
             new List<Dictionary<string, string>>();
 
+        // ==================== CONSTRUCTOR ====================
         public FrmConsultarTramites()
         {
             InitializeComponent();
             ConfigurarConsulta();
         }
 
+        // ==================== BOTONES Y EVENTOS ====================
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             RegresarMenuPrincipal();
-        }
-
-        private void RegresarMenuPrincipal()
-        {
-            FrmPrincipal principal = MdiParent as FrmPrincipal;
-
-            if (principal != null)
-                principal.AbrirFormulario(new FrmMenuPrincipal());
-            else
-                MessageBox.Show("No se encontró el formulario principal.");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -62,203 +55,27 @@ namespace SistemaTramitesMunicipales
         private void lblBuscarDni_Click(object sender, EventArgs e) { }
         private void lblBuscarTipo_Click(object sender, EventArgs e) { }
         private void lblBuscarEstado_Click(object sender, EventArgs e) { }
+
         private void txtBuscarExpediente_TextChanged(object sender, EventArgs e) { }
         private void txtBuscarDni_TextChanged(object sender, EventArgs e) { }
+
         private void cboBuscarTipo_SelectedIndexChanged(object sender, EventArgs e) { }
         private void cboBuscarEstado_SelectedIndexChanged(object sender, EventArgs e) { }
+
         private void dgvResultados_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
         private void lblCambiarEstado_Click(object sender, EventArgs e) { }
         private void cboNuevoEstado_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        private void ConfigurarConsulta()
+        // ==================== MÉTODOS VOID ====================
+        private void RegresarMenuPrincipal()
         {
-            cboBuscarTipo.Items.Clear();
-            cboBuscarTipo.Items.AddRange(new object[]
-            {
-                "Todos",
-                "Inscripción de propiedad",
-                "Constancia de no adeudo"
-            });
-            cboBuscarTipo.SelectedIndex = 0;
+            FrmPrincipal principal = MdiParent as FrmPrincipal;
 
-            cboBuscarEstado.Items.Clear();
-            cboBuscarEstado.Items.AddRange(new object[]
-            {
-                "Todos",
-                "Registrado",
-                "En revisión",
-                "Aprobado",
-                "Observado",
-                "Rechazado"
-            });
-            cboBuscarEstado.SelectedIndex = 0;
-
-            cboNuevoEstado.Items.Clear();
-            cboNuevoEstado.Items.AddRange(new object[]
-            {
-                "Registrado",
-                "En revisión",
-                "Aprobado",
-                "Observado",
-                "Rechazado"
-            });
-
-            dgvResultados.ReadOnly = true;
-            dgvResultados.AllowUserToAddRows = false;
-            dgvResultados.SelectionMode =
-                DataGridViewSelectionMode.FullRowSelect;
-            dgvResultados.MultiSelect = false;
-        }
-
-        private string ObtenerValor(
-            Dictionary<string, string> registro, string clave)
-        {
-            return registro.TryGetValue(clave, out string valor)
-                ? valor
-                : "";
-        }
-
-        private string ObtenerClaveEstado(
-            Dictionary<string, string> registro)
-        {
-            string expediente = ObtenerValor(registro, "Expediente");
-
-            if (!string.IsNullOrWhiteSpace(expediente))
-                return expediente;
-
-            // Identificador para registros antiguos sin expediente.
-            return "LEGACY:" +
-                ObtenerValor(registro, "DNI") + ":" +
-                ObtenerValor(registro, "FechaRegistro");
-        }
-
-        private Dictionary<string, string> LeerCampos(string contenido)
-        {
-            var registro = new Dictionary<string, string>(
-                StringComparer.OrdinalIgnoreCase);
-
-            foreach (string campo in contenido.Split('|'))
-            {
-                int separador = campo.IndexOf('=');
-
-                if (separador <= 0)
-                    continue;
-
-                string clave = campo.Substring(0, separador);
-                string valor = campo.Substring(separador + 1);
-                registro[clave] = valor;
-            }
-
-            return registro;
-        }
-
-
-        private List<Dictionary<string, string>> LeerInscripciones()
-        {
-            var resultados = new List<Dictionary<string, string>>();
-
-            if (!File.Exists(RutaInscripciones))
-                return resultados;
-
-            Dictionary<string, string> estados = LeerEstados();
-            int numeroExpediente = 1;
-
-            foreach (string linea in File.ReadAllLines(RutaInscripciones))
-            {
-                if (string.IsNullOrWhiteSpace(linea))
-                    continue;
-
-                string contenido;
-
-                try
-                {
-                    contenido = Encoding.UTF8.GetString(
-                        Convert.FromBase64String(linea.Trim()));
-                }
-                catch (FormatException)
-                {
-                    contenido = linea;
-                }
-
-                var registro = LeerCampos(contenido);
-
-                if (!registro.ContainsKey("DNI") &&
-                    !registro.ContainsKey("Nombres"))
-                    continue;
-
-                // Asignar un código a los registros antiguos que no lo tengan.
-                if (!registro.TryGetValue("Expediente", out string expediente) ||
-                    string.IsNullOrWhiteSpace(expediente))
-                {
-                    expediente = numeroExpediente.ToString("D6");
-                    registro["Expediente"] = expediente;
-                }
-
-                registro["Tipo"] = "Inscripción de propiedad";
-
-                string clave = ObtenerClaveEstado(registro);
-
-                registro["Estado"] = estados.TryGetValue(
-                    clave, out string estado)
-                    ? estado
-                    : "Registrado";
-
-                resultados.Add(registro);
-                numeroExpediente++;
-            }
-
-            return resultados;
-        }
-
-
-        private Dictionary<string, string> LeerEstados()
-        {
-            var estados = new Dictionary<string, string>(
-                StringComparer.OrdinalIgnoreCase);
-
-            if (!File.Exists(RutaEstados))
-                return estados;
-
-            foreach (string linea in File.ReadAllLines(RutaEstados))
-            {
-                string[] partes = linea.Split('|');
-
-                if (partes.Length != 2)
-                    continue;
-
-                try
-                {
-                    string clave = Encoding.UTF8.GetString(
-                        Convert.FromBase64String(partes[0]));
-
-                    string estado = Encoding.UTF8.GetString(
-                        Convert.FromBase64String(partes[1]));
-
-                    estados[clave] = estado;
-                }
-                catch (FormatException)
-                {
-                    // Ignora líneas dañadas del archivo de estados.
-                }
-            }
-
-            return estados;
-        }
-
-        private void GuardarEstado(string clave, string estado)
-        {
-            Directory.CreateDirectory(carpetaDatos);
-
-            var estados = LeerEstados();
-            estados[clave] = estado;
-
-            var lineas = estados.Select(par =>
-                Convert.ToBase64String(
-                    Encoding.UTF8.GetBytes(par.Key)) + "|" +
-                Convert.ToBase64String(
-                    Encoding.UTF8.GetBytes(par.Value)));
-
-            File.WriteAllLines(RutaEstados, lineas, Encoding.UTF8);
+            if (principal != null)
+                principal.AbrirFormulario(new FrmMenuPrincipal());
+            else
+                MessageBox.Show("No se encontró el formulario principal.");
         }
 
         private void BuscarTramites()
@@ -399,7 +216,195 @@ namespace SistemaTramitesMunicipales
             }
         }
 
+        private void ConfigurarConsulta()
+        {
+            cboBuscarTipo.Items.Clear();
+            cboBuscarTipo.Items.AddRange(new object[]
+            {
+                "Todos",
+                "Inscripción de propiedad",
+                "Constancia de no adeudo"
+            });
+            cboBuscarTipo.SelectedIndex = 0;
 
+            cboBuscarEstado.Items.Clear();
+            cboBuscarEstado.Items.AddRange(new object[]
+            {
+                "Todos",
+                "Registrado",
+                "En revisión",
+                "Aprobado",
+                "Observado",
+                "Rechazado"
+            });
+            cboBuscarEstado.SelectedIndex = 0;
+
+            cboNuevoEstado.Items.Clear();
+            cboNuevoEstado.Items.AddRange(new object[]
+            {
+                "Registrado",
+                "En revisión",
+                "Aprobado",
+                "Observado",
+                "Rechazado"
+            });
+
+            dgvResultados.ReadOnly = true;
+            dgvResultados.AllowUserToAddRows = false;
+            dgvResultados.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+            dgvResultados.MultiSelect = false;
+        }
+
+        private void GuardarEstado(string clave, string estado)
+        {
+            Directory.CreateDirectory(carpetaDatos);
+
+            var estados = LeerEstados();
+            estados[clave] = estado;
+
+            var lineas = estados.Select(par =>
+                Convert.ToBase64String(
+                    Encoding.UTF8.GetBytes(par.Key)) + "|" +
+                Convert.ToBase64String(
+                    Encoding.UTF8.GetBytes(par.Value)));
+
+            File.WriteAllLines(RutaEstados, lineas, Encoding.UTF8);
+        }
+
+        // ==================== MÉTODOS CON RETORNO ====================
+        private string ObtenerValor(
+            Dictionary<string, string> registro, string clave)
+        {
+            return registro.TryGetValue(clave, out string valor)
+                ? valor
+                : "";
+        }
+
+        private string ObtenerClaveEstado(
+            Dictionary<string, string> registro)
+        {
+            string expediente = ObtenerValor(registro, "Expediente");
+
+            if (!string.IsNullOrWhiteSpace(expediente))
+                return expediente;
+
+            // Identificador para registros antiguos sin expediente.
+            return "LEGACY:" +
+                ObtenerValor(registro, "DNI") + ":" +
+                ObtenerValor(registro, "FechaRegistro");
+        }
+
+        private Dictionary<string, string> LeerCampos(string contenido)
+        {
+            var registro = new Dictionary<string, string>(
+                StringComparer.OrdinalIgnoreCase);
+
+            foreach (string campo in contenido.Split('|'))
+            {
+                int separador = campo.IndexOf('=');
+
+                if (separador <= 0)
+                    continue;
+
+                string clave = campo.Substring(0, separador);
+                string valor = campo.Substring(separador + 1);
+                registro[clave] = valor;
+            }
+
+            return registro;
+        }
+
+        private List<Dictionary<string, string>> LeerInscripciones()
+        {
+            var resultados = new List<Dictionary<string, string>>();
+
+            if (!File.Exists(RutaInscripciones))
+                return resultados;
+
+            Dictionary<string, string> estados = LeerEstados();
+            int numeroExpediente = 1;
+
+            foreach (string linea in File.ReadAllLines(RutaInscripciones))
+            {
+                if (string.IsNullOrWhiteSpace(linea))
+                    continue;
+
+                string contenido;
+
+                try
+                {
+                    contenido = Encoding.UTF8.GetString(
+                        Convert.FromBase64String(linea.Trim()));
+                }
+                catch (FormatException)
+                {
+                    contenido = linea;
+                }
+
+                var registro = LeerCampos(contenido);
+
+                if (!registro.ContainsKey("DNI") &&
+                    !registro.ContainsKey("Nombres"))
+                    continue;
+
+                // Asignar un código a los registros antiguos que no lo tengan.
+                if (!registro.TryGetValue("Expediente", out string expediente) ||
+                    string.IsNullOrWhiteSpace(expediente))
+                {
+                    expediente = numeroExpediente.ToString("D6");
+                    registro["Expediente"] = expediente;
+                }
+
+                registro["Tipo"] = "Inscripción de propiedad";
+
+                string clave = ObtenerClaveEstado(registro);
+
+                registro["Estado"] = estados.TryGetValue(
+                    clave, out string estado)
+                    ? estado
+                    : "Registrado";
+
+                resultados.Add(registro);
+                numeroExpediente++;
+            }
+
+            return resultados;
+        }
+
+        private Dictionary<string, string> LeerEstados()
+        {
+            var estados = new Dictionary<string, string>(
+                StringComparer.OrdinalIgnoreCase);
+
+            if (!File.Exists(RutaEstados))
+                return estados;
+
+            foreach (string linea in File.ReadAllLines(RutaEstados))
+            {
+                string[] partes = linea.Split('|');
+
+                if (partes.Length != 2)
+                    continue;
+
+                try
+                {
+                    string clave = Encoding.UTF8.GetString(
+                        Convert.FromBase64String(partes[0]));
+
+                    string estado = Encoding.UTF8.GetString(
+                        Convert.FromBase64String(partes[1]));
+
+                    estados[clave] = estado;
+                }
+                catch (FormatException)
+                {
+                    // Ignora líneas dañadas del archivo de estados.
+                }
+            }
+
+            return estados;
+        }
 
         private List<Dictionary<string, string>> LeerConstancias()
         {
@@ -422,19 +427,19 @@ namespace SistemaTramitesMunicipales
 
                 string[] nombres =
                 {
-            "CodigoContribuyente",
-            "DNI",
-            "Telefono",
-            "FechaRegistro",
-            "Nombres",
-            "Correo",
-            "Domicilio",
-            "Periodos",
-            "UbicacionPredio",
-            "Motivo",
-            "Representante",
-            "Adjuntos"
-        };
+                    "CodigoContribuyente",
+                    "DNI",
+                    "Telefono",
+                    "FechaRegistro",
+                    "Nombres",
+                    "Correo",
+                    "Domicilio",
+                    "Periodos",
+                    "UbicacionPredio",
+                    "Motivo",
+                    "Representante",
+                    "Adjuntos"
+                };
 
                 var registro = new Dictionary<string, string>(
                     StringComparer.OrdinalIgnoreCase);
@@ -483,7 +488,5 @@ namespace SistemaTramitesMunicipales
 
             return resultados;
         }
-
-
     }
 }
