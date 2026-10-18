@@ -46,6 +46,7 @@
             pnlAcceso.Name = "pnlAcceso";
             pnlAcceso.Size = new Size(450, 500);
             pnlAcceso.TabIndex = 0;
+            pnlAcceso.Paint += pnlAcceso_Paint;
             // 
             // lblTitulo
             // 
@@ -56,6 +57,7 @@
             lblTitulo.Size = new Size(380, 60);
             lblTitulo.TabIndex = 5;
             lblTitulo.Text = "Sistema de Trámites Municipales";
+            lblTitulo.Click += lblTitulo_Click;
             // 
             // lblUsuario
             // 
@@ -64,6 +66,7 @@
             lblUsuario.Size = new Size(300, 20);
             lblUsuario.TabIndex = 6;
             lblUsuario.Text = "Usuario";
+            lblUsuario.Click += lblUsuario_Click;
             // 
             // txtUsuario
             // 
@@ -80,6 +83,7 @@
             lblContrasena.Size = new Size(300, 20);
             lblContrasena.TabIndex = 8;
             lblContrasena.Text = "Contraseña";
+            lblContrasena.Click += lblContrasena_Click;
             // 
             // txtContrasena
             // 
@@ -88,6 +92,7 @@
             txtContrasena.Size = new Size(340, 24);
             txtContrasena.TabIndex = 9;
             txtContrasena.UseSystemPasswordChar = true;
+            txtContrasena.TextChanged += txtContrasena_TextChanged;
             // 
             // btnIngresar
             // 
@@ -113,6 +118,7 @@
             pnlLogo.Name = "pnlLogo";
             pnlLogo.Size = new Size(400, 500);
             pnlLogo.TabIndex = 1;
+            pnlLogo.Paint += pnlLogo_Paint;
             // 
             // picLogo
             // 
@@ -123,6 +129,7 @@
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
+            picLogo.Click += picLogo_Click;
             // 
             // lblMunicipalidad
             // 
@@ -134,6 +141,7 @@
             lblMunicipalidad.TabIndex = 3;
             lblMunicipalidad.Text = "Municipalidad de\nLos Olivos";
             lblMunicipalidad.TextAlign = ContentAlignment.MiddleCenter;
+            lblMunicipalidad.Click += lblMunicipalidad_Click;
             // 
             // lblGerencia
             // 
@@ -144,6 +152,7 @@
             lblGerencia.TabIndex = 4;
             lblGerencia.Text = "Gerencia de Administración Tributaria y Rentas";
             lblGerencia.TextAlign = ContentAlignment.MiddleCenter;
+            lblGerencia.Click += lblGerencia_Click;
             // 
             // FrmLogin
             // 
