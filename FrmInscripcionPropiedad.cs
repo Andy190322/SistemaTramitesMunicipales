@@ -3,6 +3,8 @@
     public partial class FrmInscripcionPropiedad : Form
     {
         private bool inscripcionGuardada = false;
+        // ==================== CONSTRUCTOR ====================
+
         public FrmInscripcionPropiedad()
         {
             InitializeComponent();
@@ -16,15 +18,457 @@
             dgvDocumentos.ReadOnly = true;
         }
 
+
+
+        // ==================== EVENTOS ====================
+
         private void lblDniHR_Click(object sender, EventArgs e)
         {
 
         }
+
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             AvanzarPestana();
         }
 
+
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            RetrocederPestana();
+        }
+
+
+        private void dgvPrediosHR_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnRegistrarPredio_Click(object sender, EventArgs e)
+        {
+            RegistrarPredioDeclarado();
+        }
+
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            CalcularAutovaluoEImpuesto();
+        }
+
+
+        private void btnAgregarCopropietario_Click(object sender, EventArgs e)
+        {
+            AgregarCopropietario();
+        }
+
+
+
+        private void btnQuitarCopropietario_Click(object sender, EventArgs e)
+        {
+            QuitarCopropietario();
+        }
+
+
+        private void btnAdjuntarDocumento_Click(object sender, EventArgs e)
+        {
+            AdjuntarDocumento();
+        }
+
+
+        private void btnQuitarDocumento_Click(object sender, EventArgs e)
+        {
+            QuitarDocumento();
+        }
+
+
+        private void btnGuardarInscripcion_Click(object sender, EventArgs e)
+        {
+            GuardarInscripcion();
+        }
+
+        private void btnEliminarConstruccion_Click(object sender, EventArgs e)
+        {
+            EliminarConstruccion();
+        }
+
+        private void lblTotalPorcentaje_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtNombresHR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            if (ConfirmarRegreso())
+            {
+                RegresarMenuSeleccion();
+            }
+        }
+
+
+
+        private void txtDniHR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblTelefonoHR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtTelefonoHR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblDomicilioHR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtDomicilioHR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblNombresHR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblCorreoHR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtCorreoHR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblTipoDeclaracion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblMotivoDeclaracion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboMotivoDeclaracion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboTipoDeclaracion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblImpuestoAnual_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtImpuestoAnual_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblImpuestoTrimestral_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtImpuestoTrimestral_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblPrediosHR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblCodigoPredio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtCodigoPredio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblDistrito_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboDistrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblDireccionPredio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtDireccionPredio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblEstadoPredio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblTipoPredio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboEstadoPredio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboTipoPredio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblUsoPredio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblCondicion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboUsoPredio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void cboCondicion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblAreaTerreno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblAreaConstruida_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblNumeroPisos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void numAreaTerreno_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void numAreaConstruida_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void numNumeroPisos_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblInstruccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dgvConstrucciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void tabConstruccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblArancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void numArancel_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblAutovaluo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtAutovaluo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblEscala_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblNotaValores_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblDniCopropietario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblNombreCopropietario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtDniCopropietario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtNombreCopropietario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void tabCopropietarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void numPorcentaje_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dgvCopropietarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void lblRequisitos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void clbRequisitos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblFechaCompra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lblMulta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dtpFechaCompra_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dgvDocumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        // ==================== MÉTODOS VOID ====================
 
         private void AvanzarPestana()
         {
@@ -43,10 +487,6 @@
             }
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            RetrocederPestana();
-        }
 
         private void RetrocederPestana()
         {
@@ -55,78 +495,6 @@
                 tabInscripcion.SelectedIndex--;
             }
         }
-
-
-        private bool ValidarDatosHR()
-        {
-            if (txtDniHR.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el DNI o RUC del contribuyente.");
-                txtDniHR.Focus();
-                return false;
-            }
-
-            if (!ValidarDniRucHR())
-            {
-                return false;
-            }
-
-            if (txtNombresHR.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese los apellidos y nombres del contribuyente.");
-                txtNombresHR.Focus();
-                return false;
-            }
-
-            if (txtTelefonoHR.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el teléfono del contribuyente.");
-                txtTelefonoHR.Focus();
-                return false;
-            }
-
-            if (!ValidarTelefonoHR())
-            {
-                return false;
-            }
-
-            if (txtCorreoHR.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el correo electrónico del contribuyente.");
-                txtCorreoHR.Focus();
-                return false;
-            }
-
-            if (!ValidarCorreoHR())
-            {
-                return false;
-            }
-
-            if (txtDomicilioHR.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el domicilio del contribuyente.");
-                txtDomicilioHR.Focus();
-                return false;
-            }
-
-            if (cboTipoDeclaracion.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione el tipo de declaración.");
-                cboTipoDeclaracion.Focus();
-                return false;
-            }
-
-            if (cboMotivoDeclaracion.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione el motivo de la declaración.");
-                cboMotivoDeclaracion.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
-
         private void ConfigurarCombosHR()
         {
             cboTipoDeclaracion.Items.Clear();
@@ -142,73 +510,6 @@
         }
 
 
-        private bool ValidarDniRucHR()
-        {
-            string documento = txtDniHR.Text.Trim();
-
-            if (documento.Length != 8 && documento.Length != 11)
-            {
-                MessageBox.Show("El DNI debe tener 8 dígitos o el RUC 11 dígitos.");
-                txtDniHR.Focus();
-                return false;
-            }
-
-            foreach (char caracter in documento)
-            {
-                if (!char.IsDigit(caracter))
-                {
-                    MessageBox.Show("El DNI o RUC solo debe contener números.");
-                    txtDniHR.Focus();
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-
-        private bool ValidarTelefonoHR()
-        {
-            string telefono = txtTelefonoHR.Text.Trim();
-
-            if (telefono.Length != 9)
-            {
-                MessageBox.Show("El teléfono debe tener 9 dígitos.");
-                txtTelefonoHR.Focus();
-                return false;
-            }
-
-            foreach (char caracter in telefono)
-            {
-                if (!char.IsDigit(caracter))
-                {
-                    MessageBox.Show("El teléfono solo debe contener números.");
-                    txtTelefonoHR.Focus();
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-
-        private bool ValidarCorreoHR()
-        {
-            string correo = txtCorreoHR.Text.Trim();
-
-            if (correo == "" ||
-                !System.Text.RegularExpressions.Regex.IsMatch(
-                    correo,
-                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-            {
-                MessageBox.Show("Ingrese un correo electrónico válido.");
-                txtCorreoHR.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
 
         private void ConfigurarTablaPrediosHR()
         {
@@ -222,10 +523,7 @@
                 DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void dgvPrediosHR_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
         private void RegistrarPredioDeclarado()
         {
             if (!ValidarDatosHR())
@@ -271,15 +569,6 @@
             MessageBox.Show("Predio agregado correctamente.");
         }
 
-        private void btnRegistrarPredio_Click(object sender, EventArgs e)
-        {
-            RegistrarPredioDeclarado();
-        }
-
-        private void btnCalcular_Click(object sender, EventArgs e)
-        {
-            CalcularAutovaluoEImpuesto();
-        }
 
         private void CalcularAutovaluoEImpuesto()
         {
@@ -304,11 +593,6 @@
                 autovaluoTotal.ToString("N2")
             );
             ActualizarImpuestos();
-        }
-
-        private void btnAgregarCopropietario_Click(object sender, EventArgs e)
-        {
-            AgregarCopropietario();
         }
 
 
@@ -399,10 +683,6 @@
         }
 
 
-        private void btnQuitarCopropietario_Click(object sender, EventArgs e)
-        {
-            QuitarCopropietario();
-        }
 
         private void QuitarCopropietario()
         {
@@ -423,10 +703,6 @@
             MessageBox.Show("Copropietario quitado correctamente.");
         }
 
-        private void btnAdjuntarDocumento_Click(object sender, EventArgs e)
-        {
-            AdjuntarDocumento();
-        }
 
         private void AdjuntarDocumento()
         {
@@ -457,10 +733,6 @@
             MessageBox.Show("Documento adjuntado correctamente.");
         }
 
-        private void btnQuitarDocumento_Click(object sender, EventArgs e)
-        {
-            QuitarDocumento();
-        }
 
         private void QuitarDocumento()
         {
@@ -481,6 +753,7 @@
             MessageBox.Show("Documento quitado correctamente.");
         }
 
+
         private void ConfigurarRequisitos()
         {
             clbRequisitos.Items.Clear();
@@ -492,45 +765,6 @@
             clbRequisitos.Items.Add("Comprobante de pago, si corresponde");
         }
 
-
-        private bool ValidarDatosPredio()
-        {
-            if (string.IsNullOrWhiteSpace(txtCodigoPredio.Text) ||
-                string.IsNullOrWhiteSpace(txtDireccionPredio.Text))
-            {
-                MessageBox.Show("Ingrese el código y la dirección del predio.");
-                tabInscripcion.SelectedTab = tabPU;
-                return false;
-            }
-
-            if (cboDistrito.SelectedIndex < 0 ||
-                cboEstadoPredio.SelectedIndex < 0 ||
-                cboTipoPredio.SelectedIndex < 0 ||
-                cboUsoPredio.SelectedIndex < 0 ||
-                cboCondicion.SelectedIndex < 0)
-            {
-                MessageBox.Show("Complete todos los campos de selección del predio.");
-                tabInscripcion.SelectedTab = tabPU;
-                return false;
-            }
-
-            if (numAreaTerreno.Value <= 0)
-            {
-                MessageBox.Show("El área del terreno debe ser mayor que cero.");
-                tabInscripcion.SelectedTab = tabPU;
-                numAreaTerreno.Focus();
-                return false;
-            }
-
-            if (numAreaConstruida.Value < 0 || numNumeroPisos.Value < 0)
-            {
-                MessageBox.Show("Revise el área construida y el número de pisos.");
-                tabInscripcion.SelectedTab = tabPU;
-                return false;
-            }
-
-            return true;
-        }
 
 
         private void GuardarInscripcion()
@@ -603,31 +837,7 @@
         }
 
 
-        private void btnGuardarInscripcion_Click(object sender, EventArgs e)
-        {
-            GuardarInscripcion();
-        }
-        private decimal CalcularValorConstrucciones()
-        {
-            decimal total = 0;
 
-            foreach (DataGridViewRow fila in dgvConstrucciones.Rows)
-            {
-                if (fila.IsNewRow)
-                {
-                    continue;
-                }
-
-                if (decimal.TryParse(
-                    Convert.ToString(fila.Cells["colValor"].Value),
-                    out decimal valor))
-                {
-                    total += valor;
-                }
-            }
-
-            return total;
-        }
         private void EliminarConstruccion()
         {
             if (dgvConstrucciones.SelectedRows.Count == 0)
@@ -648,38 +858,6 @@
             }
         }
 
-        private void btnEliminarConstruccion_Click(object sender, EventArgs e)
-        {
-            EliminarConstruccion();
-        }
-        private decimal CalcularImpuestoPredial(decimal autovaluo)
-        {
-            decimal uit = 5500m;
-            decimal limite15UIT = 15 * uit;
-            decimal limite60UIT = 60 * uit;
-            decimal impuesto = 0;
-
-            if (autovaluo <= 0)
-            {
-                return 0;
-            }
-
-            impuesto += Math.Min(autovaluo, limite15UIT) * 0.002m;
-
-            if (autovaluo > limite15UIT)
-            {
-                impuesto +=
-                    (Math.Min(autovaluo, limite60UIT) - limite15UIT)
-                    * 0.006m;
-            }
-
-            if (autovaluo > limite60UIT)
-            {
-                impuesto += (autovaluo - limite60UIT) * 0.01m;
-            }
-
-            return impuesto;
-        }
 
         private void ActualizarImpuestos()
         {
@@ -695,6 +873,227 @@
             txtImpuestoAnual.Text = impuestoAnual.ToString("N2");
             txtImpuestoTrimestral.Text = impuestoTrimestral.ToString("N2");
         }
+
+
+        private void ActualizarTotalCopropietarios()
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow fila in dgvCopropietarios.Rows)
+            {
+                if (!fila.IsNewRow &&
+                    decimal.TryParse(
+                        Convert.ToString(fila.Cells["colPorcentajeCop"].Value),
+                        out decimal porcentaje))
+                {
+                    total += porcentaje;
+                }
+            }
+
+            lblTotalPorcentaje.Text = "Total: " + total.ToString("0.##") + " %";
+        }
+
+
+        private void RegresarMenuSeleccion()
+        {
+            FrmPrincipal principal = this.MdiParent as FrmPrincipal;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(new FrmNuevoTramite());
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el formulario principal.");
+            }
+        }
+
+
+
+        // ==================== MÉTODOS BOOL ====================
+
+        private bool ValidarDatosHR()
+        {
+            if (txtDniHR.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el DNI o RUC del contribuyente.");
+                txtDniHR.Focus();
+                return false;
+            }
+
+            if (!ValidarDniRucHR())
+            {
+                return false;
+            }
+
+            if (txtNombresHR.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese los apellidos y nombres del contribuyente.");
+                txtNombresHR.Focus();
+                return false;
+            }
+
+            if (txtTelefonoHR.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el teléfono del contribuyente.");
+                txtTelefonoHR.Focus();
+                return false;
+            }
+
+            if (!ValidarTelefonoHR())
+            {
+                return false;
+            }
+
+            if (txtCorreoHR.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el correo electrónico del contribuyente.");
+                txtCorreoHR.Focus();
+                return false;
+            }
+
+            if (!ValidarCorreoHR())
+            {
+                return false;
+            }
+
+            if (txtDomicilioHR.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el domicilio del contribuyente.");
+                txtDomicilioHR.Focus();
+                return false;
+            }
+
+            if (cboTipoDeclaracion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione el tipo de declaración.");
+                cboTipoDeclaracion.Focus();
+                return false;
+            }
+
+            if (cboMotivoDeclaracion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione el motivo de la declaración.");
+                cboMotivoDeclaracion.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+        private bool ValidarDniRucHR()
+        {
+            string documento = txtDniHR.Text.Trim();
+
+            if (documento.Length != 8 && documento.Length != 11)
+            {
+                MessageBox.Show("El DNI debe tener 8 dígitos o el RUC 11 dígitos.");
+                txtDniHR.Focus();
+                return false;
+            }
+
+            foreach (char caracter in documento)
+            {
+                if (!char.IsDigit(caracter))
+                {
+                    MessageBox.Show("El DNI o RUC solo debe contener números.");
+                    txtDniHR.Focus();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+
+        private bool ValidarTelefonoHR()
+        {
+            string telefono = txtTelefonoHR.Text.Trim();
+
+            if (telefono.Length != 9)
+            {
+                MessageBox.Show("El teléfono debe tener 9 dígitos.");
+                txtTelefonoHR.Focus();
+                return false;
+            }
+
+            foreach (char caracter in telefono)
+            {
+                if (!char.IsDigit(caracter))
+                {
+                    MessageBox.Show("El teléfono solo debe contener números.");
+                    txtTelefonoHR.Focus();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+
+        private bool ValidarCorreoHR()
+        {
+            string correo = txtCorreoHR.Text.Trim();
+
+            if (correo == "" ||
+                !System.Text.RegularExpressions.Regex.IsMatch(
+                    correo,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Ingrese un correo electrónico válido.");
+                txtCorreoHR.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+        private bool ValidarDatosPredio()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoPredio.Text) ||
+                string.IsNullOrWhiteSpace(txtDireccionPredio.Text))
+            {
+                MessageBox.Show("Ingrese el código y la dirección del predio.");
+                tabInscripcion.SelectedTab = tabPU;
+                return false;
+            }
+
+            if (cboDistrito.SelectedIndex < 0 ||
+                cboEstadoPredio.SelectedIndex < 0 ||
+                cboTipoPredio.SelectedIndex < 0 ||
+                cboUsoPredio.SelectedIndex < 0 ||
+                cboCondicion.SelectedIndex < 0)
+            {
+                MessageBox.Show("Complete todos los campos de selección del predio.");
+                tabInscripcion.SelectedTab = tabPU;
+                return false;
+            }
+
+            if (numAreaTerreno.Value <= 0)
+            {
+                MessageBox.Show("El área del terreno debe ser mayor que cero.");
+                tabInscripcion.SelectedTab = tabPU;
+                numAreaTerreno.Focus();
+                return false;
+            }
+
+            if (numAreaConstruida.Value < 0 || numNumeroPisos.Value < 0)
+            {
+                MessageBox.Show("Revise el área construida y el número de pisos.");
+                tabInscripcion.SelectedTab = tabPU;
+                return false;
+            }
+
+            return true;
+        }
+
+
 
         private bool ValidarCopropietarios()
         {
@@ -729,6 +1128,7 @@
 
             return true;
         }
+
         private bool ValidarDocumentos()
         {
             if (dgvDocumentos.Rows.Count == 0)
@@ -760,6 +1160,139 @@
             return true;
         }
 
+
+
+
+        private bool CopiarDocumentosAdjuntos()
+        {
+            try
+            {
+                string carpetaDocumentos = System.IO.Path.Combine(
+                    Application.StartupPath,
+                    "Datos",
+                    "Documentos"
+                );
+
+                System.IO.Directory.CreateDirectory(carpetaDocumentos);
+
+                foreach (DataGridViewRow fila in dgvDocumentos.Rows)
+                {
+                    if (fila.IsNewRow)
+                        continue;
+
+                    string rutaOriginal = Convert.ToString(
+                        fila.Cells["colRutaArchivo"].Value
+                    );
+
+                    if (string.IsNullOrWhiteSpace(rutaOriginal) ||
+                        !System.IO.File.Exists(rutaOriginal))
+                    {
+                        MessageBox.Show(
+                            "No se encuentra uno de los documentos adjuntos:\n" +
+                            rutaOriginal
+                        );
+                        return false;
+                    }
+
+                    // Si el archivo ya está en la carpeta permanente,
+                    // no se vuelve a copiar.
+                    string rutaActual = System.IO.Path.GetFullPath(rutaOriginal);
+                    string rutaCarpeta = System.IO.Path.GetFullPath(carpetaDocumentos);
+
+                    if (rutaActual.StartsWith(
+                        rutaCarpeta + System.IO.Path.DirectorySeparatorChar,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    string nombre = System.IO.Path.GetFileName(rutaOriginal);
+
+                    string destino = System.IO.Path.Combine(
+                        carpetaDocumentos,
+                        Guid.NewGuid().ToString("N") + "_" + nombre
+                    );
+
+                    System.IO.File.Copy(rutaOriginal, destino);
+
+                    fila.Cells["colRutaArchivo"].Value = destino;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al copiar los documentos: " + ex.Message
+                );
+                return false;
+            }
+        }
+
+
+        private bool ConfirmarRegreso()
+        {
+            DialogResult respuesta = MessageBox.Show(
+                "Si tienes cambios sin guardar o una inscripción sin registrar, estos se perderán al regresar al menú de selección. ¿Deseas continuar?",
+                "Confirmar regreso",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            return respuesta == DialogResult.Yes;
+        }
+        // ==================== MÉTODOS CON VALOR DE RETORNO ====================
+
+        private decimal CalcularValorConstrucciones()
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow fila in dgvConstrucciones.Rows)
+            {
+                if (fila.IsNewRow)
+                {
+                    continue;
+                }
+
+                if (decimal.TryParse(
+                    Convert.ToString(fila.Cells["colValor"].Value),
+                    out decimal valor))
+                {
+                    total += valor;
+                }
+            }
+
+            return total;
+        }
+
+        private decimal CalcularImpuestoPredial(decimal autovaluo)
+        {
+            decimal uit = 5500m;
+            decimal limite15UIT = 15 * uit;
+            decimal limite60UIT = 60 * uit;
+            decimal impuesto = 0;
+
+            if (autovaluo <= 0)
+            {
+                return 0;
+            }
+
+            impuesto += Math.Min(autovaluo, limite15UIT) * 0.002m;
+
+            if (autovaluo > limite15UIT)
+            {
+                impuesto +=
+                    (Math.Min(autovaluo, limite60UIT) - limite15UIT)
+                    * 0.006m;
+            }
+
+            if (autovaluo > limite60UIT)
+            {
+                impuesto += (autovaluo - limite60UIT) * 0.01m;
+            }
+
+            return impuesto;
+        }
 
 
         private string PrepararDatosInscripcion()
@@ -867,6 +1400,7 @@
             }
 
             datos += "|Documentos=" + documentos;
+
             // REQUISITOS DOCUMENTARIOS VERIFICADOS
             string requisitos = "";
 
@@ -885,71 +1419,6 @@
 
 
 
-        private bool CopiarDocumentosAdjuntos()
-        {
-            try
-            {
-                string carpetaDocumentos = System.IO.Path.Combine(
-                    Application.StartupPath,
-                    "Datos",
-                    "Documentos"
-                );
-
-                System.IO.Directory.CreateDirectory(carpetaDocumentos);
-
-                foreach (DataGridViewRow fila in dgvDocumentos.Rows)
-                {
-                    if (fila.IsNewRow)
-                        continue;
-
-                    string rutaOriginal = Convert.ToString(
-                        fila.Cells["colRutaArchivo"].Value
-                    );
-
-                    if (string.IsNullOrWhiteSpace(rutaOriginal) ||
-                        !System.IO.File.Exists(rutaOriginal))
-                    {
-                        MessageBox.Show(
-                            "No se encuentra uno de los documentos adjuntos:\n" +
-                            rutaOriginal
-                        );
-                        return false;
-                    }
-
-                    // Si el archivo ya está en la carpeta permanente,
-                    // no se vuelve a copiar.
-                    string rutaActual = System.IO.Path.GetFullPath(rutaOriginal);
-                    string rutaCarpeta = System.IO.Path.GetFullPath(carpetaDocumentos);
-
-                    if (rutaActual.StartsWith(
-                        rutaCarpeta + System.IO.Path.DirectorySeparatorChar,
-                        StringComparison.OrdinalIgnoreCase))
-                    {
-                        continue;
-                    }
-
-                    string nombre = System.IO.Path.GetFileName(rutaOriginal);
-
-                    string destino = System.IO.Path.Combine(
-                        carpetaDocumentos,
-                        Guid.NewGuid().ToString("N") + "_" + nombre
-                    );
-
-                    System.IO.File.Copy(rutaOriginal, destino);
-
-                    fila.Cells["colRutaArchivo"].Value = destino;
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Error al copiar los documentos: " + ex.Message
-                );
-                return false;
-            }
-        }
 
         private string CodificarDato(string dato)
         {
@@ -958,69 +1427,6 @@
             );
         }
 
-        private void lblTotalPorcentaje_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ActualizarTotalCopropietarios()
-        {
-            decimal total = 0;
-
-            foreach (DataGridViewRow fila in dgvCopropietarios.Rows)
-            {
-                if (!fila.IsNewRow &&
-                    decimal.TryParse(
-                        Convert.ToString(fila.Cells["colPorcentajeCop"].Value),
-                        out decimal porcentaje))
-                {
-                    total += porcentaje;
-                }
-            }
-
-            lblTotalPorcentaje.Text = "Total: " + total.ToString("0.##") + " %";
-        }
-
-        private void txtNombresHR_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            if (ConfirmarRegreso())
-            {
-                RegresarMenuSeleccion();
-            }
-        }
-
-
-        private bool ConfirmarRegreso()
-        {
-            DialogResult respuesta = MessageBox.Show(
-                "Si tienes cambios sin guardar o una inscripción sin registrar, estos se perderán al regresar al menú de selección. ¿Deseas continuar?",
-                "Confirmar regreso",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            return respuesta == DialogResult.Yes;
-        }
-
-
-        private void RegresarMenuSeleccion()
-        {
-            FrmPrincipal principal = this.MdiParent as FrmPrincipal;
-
-            if (principal != null)
-            {
-                principal.AbrirFormulario(new FrmNuevoTramite());
-            }
-            else
-            {
-                MessageBox.Show("No se encontró el formulario principal.");
-            }
-        }
 
 
     }

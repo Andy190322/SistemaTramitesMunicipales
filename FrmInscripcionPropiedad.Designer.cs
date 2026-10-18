@@ -186,6 +186,7 @@
             txtDniHR.Name = "txtDniHR";
             txtDniHR.Size = new Size(300, 24);
             txtDniHR.TabIndex = 7;
+            txtDniHR.TextChanged += txtDniHR_TextChanged;
             // 
             // lblNombresHR
             // 
@@ -194,6 +195,7 @@
             lblNombresHR.Size = new Size(400, 20);
             lblNombresHR.TabIndex = 8;
             lblNombresHR.Text = "Apellidos y nombres o razón social";
+            lblNombresHR.Click += lblNombresHR_Click;
             // 
             // txtNombresHR
             // 
@@ -210,6 +212,7 @@
             lblTelefonoHR.Size = new Size(300, 20);
             lblTelefonoHR.TabIndex = 10;
             lblTelefonoHR.Text = "Teléfono";
+            lblTelefonoHR.Click += lblTelefonoHR_Click;
             // 
             // txtTelefonoHR
             // 
@@ -217,6 +220,7 @@
             txtTelefonoHR.Name = "txtTelefonoHR";
             txtTelefonoHR.Size = new Size(300, 24);
             txtTelefonoHR.TabIndex = 11;
+            txtTelefonoHR.TextChanged += txtTelefonoHR_TextChanged;
             // 
             // lblCorreoHR
             // 
@@ -225,6 +229,7 @@
             lblCorreoHR.Size = new Size(400, 20);
             lblCorreoHR.TabIndex = 12;
             lblCorreoHR.Text = "Correo electrónico";
+            lblCorreoHR.Click += lblCorreoHR_Click;
             // 
             // txtCorreoHR
             // 
@@ -232,6 +237,7 @@
             txtCorreoHR.Name = "txtCorreoHR";
             txtCorreoHR.Size = new Size(400, 24);
             txtCorreoHR.TabIndex = 13;
+            txtCorreoHR.TextChanged += txtCorreoHR_TextChanged;
             // 
             // lblDomicilioHR
             // 
@@ -240,6 +246,7 @@
             lblDomicilioHR.Size = new Size(730, 20);
             lblDomicilioHR.TabIndex = 14;
             lblDomicilioHR.Text = "Domicilio fiscal";
+            lblDomicilioHR.Click += lblDomicilioHR_Click;
             // 
             // txtDomicilioHR
             // 
@@ -247,6 +254,7 @@
             txtDomicilioHR.Name = "txtDomicilioHR";
             txtDomicilioHR.Size = new Size(730, 24);
             txtDomicilioHR.TabIndex = 15;
+            txtDomicilioHR.TextChanged += txtDomicilioHR_TextChanged;
             // 
             // lblTipoDeclaracion
             // 
@@ -255,6 +263,7 @@
             lblTipoDeclaracion.Size = new Size(300, 20);
             lblTipoDeclaracion.TabIndex = 16;
             lblTipoDeclaracion.Text = "Tipo de declaración jurada";
+            lblTipoDeclaracion.Click += lblTipoDeclaracion_Click;
             // 
             // cboTipoDeclaracion
             // 
@@ -265,6 +274,7 @@
             cboTipoDeclaracion.Name = "cboTipoDeclaracion";
             cboTipoDeclaracion.Size = new Size(300, 25);
             cboTipoDeclaracion.TabIndex = 17;
+            cboTipoDeclaracion.SelectedIndexChanged += cboTipoDeclaracion_SelectedIndexChanged;
             // 
             // lblMotivoDeclaracion
             // 
@@ -273,6 +283,7 @@
             lblMotivoDeclaracion.Size = new Size(400, 20);
             lblMotivoDeclaracion.TabIndex = 18;
             lblMotivoDeclaracion.Text = "Motivo de la declaración";
+            lblMotivoDeclaracion.Click += lblMotivoDeclaracion_Click;
             // 
             // cboMotivoDeclaracion
             // 
@@ -283,6 +294,7 @@
             cboMotivoDeclaracion.Name = "cboMotivoDeclaracion";
             cboMotivoDeclaracion.Size = new Size(400, 25);
             cboMotivoDeclaracion.TabIndex = 19;
+            cboMotivoDeclaracion.SelectedIndexChanged += cboMotivoDeclaracion_SelectedIndexChanged;
             // 
             // lblImpuestoAnual
             // 
@@ -291,6 +303,7 @@
             lblImpuestoAnual.Size = new Size(250, 20);
             lblImpuestoAnual.TabIndex = 20;
             lblImpuestoAnual.Text = "Impuesto anual (calculado)";
+            lblImpuestoAnual.Click += lblImpuestoAnual_Click;
             // 
             // txtImpuestoAnual
             // 
@@ -299,6 +312,7 @@
             txtImpuestoAnual.ReadOnly = true;
             txtImpuestoAnual.Size = new Size(250, 24);
             txtImpuestoAnual.TabIndex = 21;
+            txtImpuestoAnual.TextChanged += txtImpuestoAnual_TextChanged;
             // 
             // lblImpuestoTrimestral
             // 
@@ -307,6 +321,7 @@
             lblImpuestoTrimestral.Size = new Size(250, 20);
             lblImpuestoTrimestral.TabIndex = 22;
             lblImpuestoTrimestral.Text = "Impuesto trimestral (anual / 4)";
+            lblImpuestoTrimestral.Click += lblImpuestoTrimestral_Click;
             // 
             // txtImpuestoTrimestral
             // 
@@ -315,6 +330,7 @@
             txtImpuestoTrimestral.ReadOnly = true;
             txtImpuestoTrimestral.Size = new Size(250, 24);
             txtImpuestoTrimestral.TabIndex = 23;
+            txtImpuestoTrimestral.TextChanged += txtImpuestoTrimestral_TextChanged;
             // 
             // lblPrediosHR
             // 
@@ -323,6 +339,7 @@
             lblPrediosHR.Size = new Size(500, 20);
             lblPrediosHR.TabIndex = 24;
             lblPrediosHR.Text = "Predios declarados";
+            lblPrediosHR.Click += lblPrediosHR_Click;
             // 
             // dgvPrediosHR
             // 
@@ -388,10 +405,10 @@
             tabPU.Controls.Add(numAreaConstruida);
             tabPU.Controls.Add(lblNumeroPisos);
             tabPU.Controls.Add(numNumeroPisos);
-            tabPU.Location = new Point(4, 24);
+            tabPU.Location = new Point(4, 26);
             tabPU.Name = "tabPU";
             tabPU.Padding = new Padding(3);
-            tabPU.Size = new Size(1102, 572);
+            tabPU.Size = new Size(1102, 570);
             tabPU.TabIndex = 2;
             tabPU.Text = "2. Predio (P.U.)";
             tabPU.UseVisualStyleBackColor = true;
@@ -416,6 +433,7 @@
             lblCodigoPredio.Size = new Size(300, 20);
             lblCodigoPredio.TabIndex = 26;
             lblCodigoPredio.Text = "Código del predio";
+            lblCodigoPredio.Click += lblCodigoPredio_Click;
             // 
             // txtCodigoPredio
             // 
@@ -423,6 +441,7 @@
             txtCodigoPredio.Name = "txtCodigoPredio";
             txtCodigoPredio.Size = new Size(300, 24);
             txtCodigoPredio.TabIndex = 27;
+            txtCodigoPredio.TextChanged += txtCodigoPredio_TextChanged;
             // 
             // lblDireccionPredio
             // 
@@ -431,6 +450,7 @@
             lblDireccionPredio.Size = new Size(690, 20);
             lblDireccionPredio.TabIndex = 28;
             lblDireccionPredio.Text = "Avenida, jirón, calle o pasaje (dirección del predio)";
+            lblDireccionPredio.Click += lblDireccionPredio_Click;
             // 
             // txtDireccionPredio
             // 
@@ -438,6 +458,7 @@
             txtDireccionPredio.Name = "txtDireccionPredio";
             txtDireccionPredio.Size = new Size(690, 24);
             txtDireccionPredio.TabIndex = 29;
+            txtDireccionPredio.TextChanged += txtDireccionPredio_TextChanged;
             // 
             // lblDistrito
             // 
@@ -446,6 +467,7 @@
             lblDistrito.Size = new Size(300, 20);
             lblDistrito.TabIndex = 30;
             lblDistrito.Text = "Distrito";
+            lblDistrito.Click += lblDistrito_Click;
             // 
             // cboDistrito
             // 
@@ -456,6 +478,7 @@
             cboDistrito.Name = "cboDistrito";
             cboDistrito.Size = new Size(300, 25);
             cboDistrito.TabIndex = 31;
+            cboDistrito.SelectedIndexChanged += cboDistrito_SelectedIndexChanged;
             // 
             // lblEstadoPredio
             // 
@@ -464,6 +487,7 @@
             lblEstadoPredio.Size = new Size(300, 20);
             lblEstadoPredio.TabIndex = 32;
             lblEstadoPredio.Text = "Estado del predio";
+            lblEstadoPredio.Click += lblEstadoPredio_Click;
             // 
             // cboEstadoPredio
             // 
@@ -474,6 +498,7 @@
             cboEstadoPredio.Name = "cboEstadoPredio";
             cboEstadoPredio.Size = new Size(300, 25);
             cboEstadoPredio.TabIndex = 33;
+            cboEstadoPredio.SelectedIndexChanged += cboEstadoPredio_SelectedIndexChanged;
             // 
             // lblTipoPredio
             // 
@@ -482,6 +507,7 @@
             lblTipoPredio.Size = new Size(360, 20);
             lblTipoPredio.TabIndex = 34;
             lblTipoPredio.Text = "Tipo de predio";
+            lblTipoPredio.Click += lblTipoPredio_Click;
             // 
             // cboTipoPredio
             // 
@@ -492,6 +518,7 @@
             cboTipoPredio.Name = "cboTipoPredio";
             cboTipoPredio.Size = new Size(360, 25);
             cboTipoPredio.TabIndex = 35;
+            cboTipoPredio.SelectedIndexChanged += cboTipoPredio_SelectedIndexChanged;
             // 
             // lblUsoPredio
             // 
@@ -500,6 +527,7 @@
             lblUsoPredio.Size = new Size(440, 20);
             lblUsoPredio.TabIndex = 36;
             lblUsoPredio.Text = "Uso del predio";
+            lblUsoPredio.Click += lblUsoPredio_Click;
             // 
             // cboUsoPredio
             // 
@@ -510,6 +538,7 @@
             cboUsoPredio.Name = "cboUsoPredio";
             cboUsoPredio.Size = new Size(440, 25);
             cboUsoPredio.TabIndex = 37;
+            cboUsoPredio.SelectedIndexChanged += cboUsoPredio_SelectedIndexChanged;
             // 
             // lblCondicion
             // 
@@ -518,6 +547,7 @@
             lblCondicion.Size = new Size(300, 20);
             lblCondicion.TabIndex = 38;
             lblCondicion.Text = "Condición de propiedad";
+            lblCondicion.Click += lblCondicion_Click;
             // 
             // cboCondicion
             // 
@@ -528,6 +558,7 @@
             cboCondicion.Name = "cboCondicion";
             cboCondicion.Size = new Size(300, 25);
             cboCondicion.TabIndex = 39;
+            cboCondicion.SelectedIndexChanged += cboCondicion_SelectedIndexChanged;
             // 
             // lblAreaTerreno
             // 
@@ -536,6 +567,7 @@
             lblAreaTerreno.Size = new Size(200, 20);
             lblAreaTerreno.TabIndex = 40;
             lblAreaTerreno.Text = "Área del terreno (m²)";
+            lblAreaTerreno.Click += lblAreaTerreno_Click;
             // 
             // numAreaTerreno
             // 
@@ -545,6 +577,7 @@
             numAreaTerreno.Name = "numAreaTerreno";
             numAreaTerreno.Size = new Size(200, 24);
             numAreaTerreno.TabIndex = 41;
+            numAreaTerreno.ValueChanged += numAreaTerreno_ValueChanged;
             // 
             // lblAreaConstruida
             // 
@@ -553,6 +586,7 @@
             lblAreaConstruida.Size = new Size(200, 20);
             lblAreaConstruida.TabIndex = 42;
             lblAreaConstruida.Text = "Área construida (m²)";
+            lblAreaConstruida.Click += lblAreaConstruida_Click;
             // 
             // numAreaConstruida
             // 
@@ -562,6 +596,7 @@
             numAreaConstruida.Name = "numAreaConstruida";
             numAreaConstruida.Size = new Size(200, 24);
             numAreaConstruida.TabIndex = 43;
+            numAreaConstruida.ValueChanged += numAreaConstruida_ValueChanged;
             // 
             // lblNumeroPisos
             // 
@@ -570,6 +605,7 @@
             lblNumeroPisos.Size = new Size(150, 20);
             lblNumeroPisos.TabIndex = 44;
             lblNumeroPisos.Text = "Número de pisos";
+            lblNumeroPisos.Click += lblNumeroPisos_Click;
             // 
             // numNumeroPisos
             // 
@@ -578,6 +614,7 @@
             numNumeroPisos.Name = "numNumeroPisos";
             numNumeroPisos.Size = new Size(150, 24);
             numNumeroPisos.TabIndex = 45;
+            numNumeroPisos.ValueChanged += numNumeroPisos_ValueChanged;
             // 
             // tabConstruccion
             // 
@@ -591,13 +628,14 @@
             tabConstruccion.Controls.Add(btnEliminarConstruccion);
             tabConstruccion.Controls.Add(lblEscala);
             tabConstruccion.Controls.Add(lblNotaValores);
-            tabConstruccion.Location = new Point(4, 24);
+            tabConstruccion.Location = new Point(4, 26);
             tabConstruccion.Name = "tabConstruccion";
             tabConstruccion.Padding = new Padding(3);
-            tabConstruccion.Size = new Size(1102, 572);
+            tabConstruccion.Size = new Size(1102, 570);
             tabConstruccion.TabIndex = 3;
             tabConstruccion.Text = "3. Construcción y autovalúo";
             tabConstruccion.UseVisualStyleBackColor = true;
+            tabConstruccion.Click += tabConstruccion_Click;
             // 
             // lblInstruccion
             // 
@@ -606,6 +644,7 @@
             lblInstruccion.Size = new Size(1040, 36);
             lblInstruccion.TabIndex = 46;
             lblInstruccion.Text = "Determinación del autovalúo: una fila por piso. Categorías: letras de los 7 componentes (muros, techos, pisos, puertas y ventanas, revestimientos, baños, instalaciones), ej. B,C,D,C,C,D,C";
+            lblInstruccion.Click += lblInstruccion_Click;
             // 
             // dgvConstrucciones
             // 
@@ -620,6 +659,7 @@
             dgvConstrucciones.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dgvConstrucciones.Size = new Size(1040, 270);
             dgvConstrucciones.TabIndex = 47;
+            dgvConstrucciones.CellContentClick += dgvConstrucciones_CellContentClick;
             // 
             // colPiso
             // 
@@ -653,6 +693,7 @@
             lblArancel.Size = new Size(260, 20);
             lblArancel.TabIndex = 48;
             lblArancel.Text = "Valor arancelario por m² de terreno (S/)";
+            lblArancel.Click += lblArancel_Click;
             // 
             // numArancel
             // 
@@ -662,6 +703,7 @@
             numArancel.Name = "numArancel";
             numArancel.Size = new Size(260, 24);
             numArancel.TabIndex = 49;
+            numArancel.ValueChanged += numArancel_ValueChanged;
             // 
             // lblAutovaluo
             // 
@@ -670,6 +712,7 @@
             lblAutovaluo.Size = new Size(220, 20);
             lblAutovaluo.TabIndex = 50;
             lblAutovaluo.Text = "Autovalúo total (S/)";
+            lblAutovaluo.Click += lblAutovaluo_Click;
             // 
             // txtAutovaluo
             // 
@@ -678,6 +721,7 @@
             txtAutovaluo.ReadOnly = true;
             txtAutovaluo.Size = new Size(220, 24);
             txtAutovaluo.TabIndex = 51;
+            txtAutovaluo.TextChanged += txtAutovaluo_TextChanged;
             // 
             // btnCalcular
             // 
@@ -709,6 +753,7 @@
             lblEscala.Size = new Size(1040, 20);
             lblEscala.TabIndex = 54;
             lblEscala.Text = "Escala del impuesto: hasta 15 UIT = 0.2 %, más de 15 hasta 60 UIT = 0.6 %, más de 60 UIT = 1 %.";
+            lblEscala.Click += lblEscala_Click;
             // 
             // lblNotaValores
             // 
@@ -717,6 +762,7 @@
             lblNotaValores.Size = new Size(1040, 20);
             lblNotaValores.TabIndex = 55;
             lblNotaValores.Text = "Los valores unitarios y aranceles deben tomarse de las tablas oficiales vigentes de la municipalidad.";
+            lblNotaValores.Click += lblNotaValores_Click;
             // 
             // tabCopropietarios
             // 
@@ -730,13 +776,14 @@
             tabCopropietarios.Controls.Add(btnQuitarCopropietario);
             tabCopropietarios.Controls.Add(dgvCopropietarios);
             tabCopropietarios.Controls.Add(lblTotalPorcentaje);
-            tabCopropietarios.Location = new Point(4, 24);
+            tabCopropietarios.Location = new Point(4, 26);
             tabCopropietarios.Name = "tabCopropietarios";
             tabCopropietarios.Padding = new Padding(3);
-            tabCopropietarios.Size = new Size(1102, 572);
+            tabCopropietarios.Size = new Size(1102, 570);
             tabCopropietarios.TabIndex = 4;
             tabCopropietarios.Text = "4. Copropietarios";
             tabCopropietarios.UseVisualStyleBackColor = true;
+            tabCopropietarios.Click += tabCopropietarios_Click;
             // 
             // lblDniCopropietario
             // 
@@ -745,6 +792,7 @@
             lblDniCopropietario.Size = new Size(200, 20);
             lblDniCopropietario.TabIndex = 56;
             lblDniCopropietario.Text = "DNI / RUC";
+            lblDniCopropietario.Click += lblDniCopropietario_Click;
             // 
             // txtDniCopropietario
             // 
@@ -752,6 +800,7 @@
             txtDniCopropietario.Name = "txtDniCopropietario";
             txtDniCopropietario.Size = new Size(200, 24);
             txtDniCopropietario.TabIndex = 57;
+            txtDniCopropietario.TextChanged += txtDniCopropietario_TextChanged;
             // 
             // lblNombreCopropietario
             // 
@@ -760,6 +809,7 @@
             lblNombreCopropietario.Size = new Size(380, 20);
             lblNombreCopropietario.TabIndex = 58;
             lblNombreCopropietario.Text = "Apellidos y nombres";
+            lblNombreCopropietario.Click += lblNombreCopropietario_Click;
             // 
             // txtNombreCopropietario
             // 
@@ -767,6 +817,7 @@
             txtNombreCopropietario.Name = "txtNombreCopropietario";
             txtNombreCopropietario.Size = new Size(380, 24);
             txtNombreCopropietario.TabIndex = 59;
+            txtNombreCopropietario.TextChanged += txtNombreCopropietario_TextChanged;
             // 
             // lblPorcentaje
             // 
@@ -783,6 +834,7 @@
             numPorcentaje.Name = "numPorcentaje";
             numPorcentaje.Size = new Size(120, 24);
             numPorcentaje.TabIndex = 61;
+            numPorcentaje.ValueChanged += numPorcentaje_ValueChanged;
             // 
             // btnAgregarCopropietario
             // 
@@ -822,6 +874,7 @@
             dgvCopropietarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCopropietarios.Size = new Size(1040, 300);
             dgvCopropietarios.TabIndex = 64;
+            dgvCopropietarios.CellContentClick += dgvCopropietarios_CellContentClick;
             // 
             // colDniCop
             // 
@@ -860,10 +913,10 @@
             tabDocumentos.Controls.Add(btnAdjuntarDocumento);
             tabDocumentos.Controls.Add(btnQuitarDocumento);
             tabDocumentos.Controls.Add(dgvDocumentos);
-            tabDocumentos.Location = new Point(4, 24);
+            tabDocumentos.Location = new Point(4, 26);
             tabDocumentos.Name = "tabDocumentos";
             tabDocumentos.Padding = new Padding(3);
-            tabDocumentos.Size = new Size(1102, 572);
+            tabDocumentos.Size = new Size(1102, 570);
             tabDocumentos.TabIndex = 5;
             tabDocumentos.Text = "5. Documentos";
             tabDocumentos.UseVisualStyleBackColor = true;
@@ -875,6 +928,7 @@
             lblRequisitos.Size = new Size(600, 20);
             lblRequisitos.TabIndex = 66;
             lblRequisitos.Text = "Requisitos presentados (primer paso: Fedatea)";
+            lblRequisitos.Click += lblRequisitos_Click;
             // 
             // clbRequisitos
             // 
@@ -885,6 +939,7 @@
             clbRequisitos.Name = "clbRequisitos";
             clbRequisitos.Size = new Size(1040, 118);
             clbRequisitos.TabIndex = 67;
+            clbRequisitos.SelectedIndexChanged += clbRequisitos_SelectedIndexChanged;
             // 
             // lblFechaCompra
             // 
@@ -893,6 +948,7 @@
             lblFechaCompra.Size = new Size(300, 20);
             lblFechaCompra.TabIndex = 68;
             lblFechaCompra.Text = "Fecha de la compra o adquisición";
+            lblFechaCompra.Click += lblFechaCompra_Click;
             // 
             // dtpFechaCompra
             // 
@@ -901,6 +957,7 @@
             dtpFechaCompra.Name = "dtpFechaCompra";
             dtpFechaCompra.Size = new Size(200, 24);
             dtpFechaCompra.TabIndex = 69;
+            dtpFechaCompra.ValueChanged += dtpFechaCompra_ValueChanged;
             // 
             // lblMulta
             // 
@@ -909,6 +966,7 @@
             lblMulta.Size = new Size(780, 20);
             lblMulta.TabIndex = 70;
             lblMulta.Text = "Aquí se mostrará si el plazo está vencido y la multa que corresponde.";
+            lblMulta.Click += lblMulta_Click;
             // 
             // btnAdjuntarDocumento
             // 
@@ -948,6 +1006,7 @@
             dgvDocumentos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDocumentos.Size = new Size(1040, 200);
             dgvDocumentos.TabIndex = 73;
+            dgvDocumentos.CellContentClick += dgvDocumentos_CellContentClick;
             // 
             // colNombreArchivo
             // 
