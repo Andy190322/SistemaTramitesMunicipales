@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             pnlAcceso = new Panel();
             lblTitulo = new Label();
             lblUsuario = new Label();
@@ -72,7 +73,7 @@
             // 
             txtUsuario.Location = new Point(30, 194);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(340, 24);
+            txtUsuario.Size = new Size(340, 29);
             txtUsuario.TabIndex = 7;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
@@ -89,7 +90,7 @@
             // 
             txtContrasena.Location = new Point(30, 259);
             txtContrasena.Name = "txtContrasena";
-            txtContrasena.Size = new Size(340, 24);
+            txtContrasena.Size = new Size(340, 29);
             txtContrasena.TabIndex = 9;
             txtContrasena.UseSystemPasswordChar = true;
             txtContrasena.TextChanged += txtContrasena_TextChanged;
@@ -123,9 +124,10 @@
             // picLogo
             // 
             picLogo.BorderStyle = BorderStyle.FixedSingle;
-            picLogo.Location = new Point(160, 110);
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
+            picLogo.Location = new Point(70, 28);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(80, 80);
+            picLogo.Size = new Size(255, 179);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
